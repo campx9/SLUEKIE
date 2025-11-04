@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "VITE_BRAND_ID": "sluekie_001"
+  },
+  "rewrites": [
+    {
+      "source": "/api/tnaado/:path*",
+      "destination": "https://api.tnaado.ca/:path*"
+    }
+  ]
+}
