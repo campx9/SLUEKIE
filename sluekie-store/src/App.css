@@ -1,42 +1,41 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Animation keyframes and styles */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-10px) translateX(20px); }
+  66% { transform: translateY(5px) translateX(-15px); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card {
-  padding: 2em;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.read-the-docs {
-  color: #888;
+.hero-left {
+  opacity: 0;
+  animation: slideInLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+.hero-visual {
+  opacity: 0;
+  animation: slideInRight 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+html {
+  scroll-behavior: smooth;
 }
