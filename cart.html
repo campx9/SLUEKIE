@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Sluekie</title>
+
+    <meta name="description" content="Your Sluekie shopping cart. Review your luxury bedding selections.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#1E2D4D">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Launch Banner Placeholder -->
+    <div id="launch-banner-placeholder"></div>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sky Background -->
+    <div class="sky-container" id="skyContainer">
+        <div class="celestial-body sun" id="sun"></div>
+        <div class="celestial-body moon" id="moon"></div>
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">Shopping Cart</h1>
+            <div class="breadcrumb fade-in">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="section cart-section">
+        <div class="container">
+            <div class="cart-layout" id="cartContent">
+                <!-- Cart content loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCart();
+
+            // Listen for cart updates
+            document.addEventListener('cartUpdated', renderCart);
+        });
+
+        function renderCart() {
+            const cartContent = document.getElementById('cartContent');
+            const cart = window.Sluekie?.Cart;
+
+            if (!cart || cart.items.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="empty-cart fade-in visible">
+                        <div class="empty-cart-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                        </div>
+                        <h2>Your cart is empty</h2>
+                        <p>Looks like you haven't added any items to your cart yet.</p>
+                        <a href="products.html" class="btn btn-primary btn-large">Start Shopping</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const subtotal = cart.getTotal();
+            const shipping = subtotal > 200 ? 0 : 15;
+            const tax = subtotal * 0.08;
+            const total = subtotal + shipping + tax;
+
+            cartContent.innerHTML = `
+                <div class="cart-items fade-in visible">
+                    <h2>Your Items (${cart.getItemCount()})</h2>
+                    ${cart.items.map(item => `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <div class="image-placeholder-small"></div>
+                            </div>
+                            <div class="cart-item-details">
+                                <h3>${item.name}</h3>
+                                <p>Premium luxury bedding</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                                    <span class="quantity-value">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <span class="price">$${(item.price * item.quantity).toFixed(2)}</span>
+                                <button class="remove-item" onclick="removeItem('${item.id}')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="cart-summary fade-in visible">
+                    <h3>Order Summary</h3>
+
+                    <div class="promo-code">
+                        <input type="text" placeholder="Promo code" id="promoInput">
+                        <button class="btn btn-secondary btn-small" onclick="applyPromo()">Apply</button>
+                    </div>
+
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$${subtotal.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>${shipping === 0 ? '<span class="free-shipping">FREE</span>' : '$' + shipping.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Estimated Tax</span>
+                            <span>$${tax.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>$${total.toFixed(2)}</span>
+                        </div>
+                    </div>
+
+                    <a href="checkout.html" class="btn btn-primary btn-large btn-block">
+                        Proceed to Checkout
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+
+                    <div class="cart-guarantees">
+                        <div class="cart-guarantee">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span>Secure Checkout</span>
+                        </div>
+                        <div class="cart-guarantee">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/>
+                            </svg>
+                            <span>Free Returns</span>
+                        </div>
+                    </div>
+
+                    <a href="products.html" class="continue-shopping">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Continue Shopping
+                    </a>
+                </div>
+            `;
+        }
+
+        function updateQuantity(productId, quantity) {
+            window.Sluekie.Cart.updateQuantity(productId, quantity);
+            renderCart();
+        }
+
+        function removeItem(productId) {
+            window.Sluekie.Cart.removeItem(productId);
+            renderCart();
+        }
+
+        function applyPromo() {
+            const promoInput = document.getElementById('promoInput');
+            const code = promoInput.value.trim().toUpperCase();
+
+            if (code === 'SLEEP20') {
+                window.Sluekie.Toast.show('20% discount applied!', 'success');
+            } else if (code) {
+                window.Sluekie.Toast.show('Invalid promo code', 'error');
+            }
+        }
+    </script>
+
+    <style>
+        /* Cart Page Styles */
+        .cart-section {
+            padding-top: 40px;
+        }
+
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* Empty Cart */
+        .empty-cart {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+        }
+
+        .empty-cart-icon {
+            color: var(--sage-calm);
+            margin-bottom: 30px;
+        }
+
+        .empty-cart h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--deep-sleep);
+            margin-bottom: 15px;
+        }
+
+        .empty-cart p {
+            color: var(--deep-charcoal);
+            margin-bottom: 30px;
+        }
+
+        /* Cart Items */
+        .cart-items {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+        }
+
+        .cart-items h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--soft-mist);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 25px;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--soft-mist);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .image-placeholder-small {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, var(--sage-calm), var(--lavender-smoke));
+        }
+
+        .cart-item-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--deep-sleep);
+            margin-bottom: 8px;
+        }
+
+        .cart-item-details p {
+            color: var(--deep-charcoal);
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .cart-item-price {
+            text-align: right;
+        }
+
+        .cart-item-price .price {
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--deep-sleep);
+            margin-bottom: 15px;
+        }
+
+        .remove-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: none;
+            border: none;
+            color: var(--deep-charcoal);
+            font-size: 13px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .remove-item:hover {
+            opacity: 1;
+            color: var(--error);
+        }
+
+        /* Cart Summary */
+        .cart-summary {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+            position: sticky;
+            top: 120px;
+        }
+
+        .cart-summary h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 25px;
+        }
+
+        .promo-code {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .promo-code input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid var(--soft-mist);
+            border-radius: 12px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .promo-code input:focus {
+            outline: none;
+            border-color: var(--sage-calm);
+        }
+
+        .summary-details {
+            margin-bottom: 25px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--deep-charcoal);
+        }
+
+        .summary-row.total {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--deep-sleep);
+            padding-top: 20px;
+            margin-top: 15px;
+            border-top: 2px solid var(--soft-mist);
+        }
+
+        .free-shipping {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .cart-guarantees {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--soft-mist);
+            border-bottom: 1px solid var(--soft-mist);
+        }
+
+        .cart-guarantee {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--deep-charcoal);
+        }
+
+        .cart-guarantee svg {
+            color: var(--sage-calm);
+        }
+
+        .continue-shopping {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--deep-charcoal);
+            font-size: 14px;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .continue-shopping:hover {
+            color: var(--deep-sleep);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cart-item-image {
+                margin: 0 auto;
+            }
+
+            .cart-item-price {
+                text-align: center;
+            }
+
+            .quantity-selector {
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>

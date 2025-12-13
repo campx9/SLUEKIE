@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sluekie</title>
+
+    <meta name="description" content="Get in touch with Sluekie. We're here to help with any questions about our luxury bedding collection.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us - Sluekie">
+    <meta property="og:description" content="Get in touch with Sluekie. We're here to help with any questions about our luxury bedding collection.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sluekie">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#1E2D4D">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Launch Banner Placeholder -->
+    <div id="launch-banner-placeholder"></div>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sky Background -->
+    <div class="sky-container" id="skyContainer">
+        <div class="celestial-body sun" id="sun"></div>
+        <div class="celestial-body moon" id="moon"></div>
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">Get in Touch</h1>
+            <p class="page-subtitle fade-in">We'd love to hear from you</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper fade-in">
+                    <div class="contact-card">
+                        <h2>Send us a Message</h2>
+                        <p>Have a question about our products, your order, or anything else? We're here to help.</p>
+
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <select class="form-select" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="product">Product Question</option>
+                                    <option value="return">Returns & Exchanges</option>
+                                    <option value="shipping">Shipping Information</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Order Number (if applicable)</label>
+                                <input type="text" class="form-input" placeholder="e.g., SLK-123456">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" placeholder="How can we help you?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large btn-block">
+                                Send Message
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper fade-in">
+                    <div class="contact-info-card">
+                        <h2>Other Ways to Reach Us</h2>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>Email Us</h3>
+                                    <p>hello@sluekie.com</p>
+                                    <span>We respond within 24 hours</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>Call Us</h3>
+                                    <p>1-800-SLUEKIE</p>
+                                    <span>Mon-Fri: 9am - 6pm EST</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h3>Live Chat</h3>
+                                    <p>Chat with our team</p>
+                                    <span>Available 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Preview -->
+                    <div class="faq-card">
+                        <h2>Frequently Asked Questions</h2>
+
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    What is your return policy?
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We offer a 30-night risk-free trial. If you're not completely satisfied, return your purchase for a full refund.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    How long does shipping take?
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Standard shipping takes 5-7 business days. Express shipping (2-3 days) and overnight options are also available.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    Do you ship internationally?
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Currently, we ship to the United States and Canada. International shipping to additional countries is coming soon.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    How do I care for my Sluekie products?
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Machine wash on gentle cycle with cold water. Tumble dry on low. Avoid bleach and fabric softeners for best results.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.Sluekie.Toast.show('Message sent successfully! We\'ll get back to you soon.', 'success');
+                this.reset();
+            });
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isOpen = faqItem.classList.contains('open');
+
+                    // Close all other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('open');
+                    });
+
+                    // Toggle current item
+                    if (!isOpen) {
+                        faqItem.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* Contact Page Styles */
+        .contact-section {
+            padding-top: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-card,
+        .contact-info-card,
+        .faq-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .contact-card h2,
+        .contact-info-card h2,
+        .faq-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--deep-sleep);
+            margin-bottom: 15px;
+        }
+
+        .contact-card > p {
+            color: var(--deep-charcoal);
+            margin-bottom: 30px;
+        }
+
+        /* Contact Methods */
+        .contact-info-card {
+            margin-bottom: 25px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--soft-mist);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateX(5px);
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-sleep);
+            flex-shrink: 0;
+        }
+
+        .method-content h3 {
+            font-size: 16px;
+            color: var(--deep-sleep);
+            margin-bottom: 4px;
+        }
+
+        .method-content p {
+            font-size: 15px;
+            color: var(--deep-charcoal);
+            margin-bottom: 4px;
+        }
+
+        .method-content span {
+            font-size: 13px;
+            color: var(--deep-charcoal);
+            opacity: 0.7;
+        }
+
+        /* FAQ */
+        .faq-list {
+            margin-top: 25px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--soft-mist);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--deep-sleep);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--sage-calm);
+        }
+
+        .faq-question svg {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: var(--deep-charcoal);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-card,
+            .contact-info-card,
+            .faq-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</body>
+</html>

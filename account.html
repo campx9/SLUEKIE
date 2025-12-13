@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Sluekie</title>
+
+    <meta name="description" content="Manage your Sluekie account. View orders, update profile, and manage preferences.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#1E2D4D">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Launch Banner Placeholder -->
+    <div id="launch-banner-placeholder"></div>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sky Background -->
+    <div class="sky-container" id="skyContainer">
+        <div class="celestial-body sun" id="sun"></div>
+        <div class="celestial-body moon" id="moon"></div>
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+    <!-- Account Section -->
+    <section class="section account-section">
+        <div class="container">
+            <!-- Auth Forms (shown when logged out) -->
+            <div id="authForms">
+                <div class="auth-container fade-in">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Sign In</button>
+                        <button class="auth-tab" data-tab="register">Create Account</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="auth-content active" id="loginForm">
+                        <div class="auth-header">
+                            <h1>Welcome Back</h1>
+                            <p>Sign in to access your account and order history</p>
+                        </div>
+
+                        <form id="loginFormElement">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-input" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-options">
+                                <label class="form-checkbox">
+                                    <input type="checkbox">
+                                    <span>Remember me</span>
+                                </label>
+                                <a href="#" class="forgot-password">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large btn-block">Sign In</button>
+                        </form>
+
+                        <div class="auth-divider">
+                            <span>or continue with</span>
+                        </div>
+
+                        <div class="social-auth">
+                            <button class="social-auth-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                </svg>
+                                Google
+                            </button>
+                            <button class="social-auth-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                                </svg>
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="auth-content" id="registerForm">
+                        <div class="auth-header">
+                            <h1>Create Account</h1>
+                            <p>Join the Sluekie sleep revolution</p>
+                        </div>
+
+                        <form id="registerFormElement">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-input" placeholder="Create a password" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" class="form-input" placeholder="Confirm your password" required>
+                            </div>
+                            <label class="form-checkbox">
+                                <input type="checkbox" required>
+                                <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                            <button type="submit" class="btn btn-primary btn-large btn-block mt-3">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard (shown when logged in) -->
+            <div id="dashboard" style="display: none;">
+                <div class="dashboard-layout">
+                    <!-- Sidebar -->
+                    <aside class="dashboard-sidebar fade-in">
+                        <div class="user-card">
+                            <div class="user-avatar" id="userAvatar">JD</div>
+                            <div class="user-info">
+                                <h3 id="userName">John Doe</h3>
+                                <p id="userEmail">john@example.com</p>
+                            </div>
+                        </div>
+
+                        <nav class="dashboard-nav">
+                            <a href="#" class="nav-item active" data-section="overview">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                                    <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                                </svg>
+                                Overview
+                            </a>
+                            <a href="#" class="nav-item" data-section="orders">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                    <line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                                </svg>
+                                Orders
+                            </a>
+                            <a href="#" class="nav-item" data-section="wishlist">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                Wishlist
+                            </a>
+                            <a href="#" class="nav-item" data-section="settings">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                </svg>
+                                Settings
+                            </a>
+                            <a href="#" class="nav-item" onclick="logout()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                    <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                                </svg>
+                                Sign Out
+                            </a>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <main class="dashboard-main">
+                        <!-- Overview Section -->
+                        <div class="dashboard-section active" id="sectionOverview">
+                            <h1 class="dashboard-title fade-in">Welcome back!</h1>
+
+                            <div class="stats-grid fade-in">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value">0</span>
+                                        <span class="stat-label">Total Orders</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value" id="wishlistCount">0</span>
+                                        <span class="stat-label">Wishlist Items</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                        </svg>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value" id="cartCount">0</span>
+                                        <span class="stat-label">Cart Items</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quick-actions fade-in">
+                                <h2>Quick Actions</h2>
+                                <div class="actions-grid">
+                                    <a href="products.html" class="action-card">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                        </svg>
+                                        <span>Shop Now</span>
+                                    </a>
+                                    <a href="cart.html" class="action-card">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                        </svg>
+                                        <span>View Cart</span>
+                                    </a>
+                                    <a href="contact.html" class="action-card">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                        </svg>
+                                        <span>Get Help</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orders Section -->
+                        <div class="dashboard-section" id="sectionOrders">
+                            <h1 class="dashboard-title">Order History</h1>
+                            <div class="empty-state">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                </svg>
+                                <h3>No orders yet</h3>
+                                <p>When you place your first order, it will appear here.</p>
+                                <a href="products.html" class="btn btn-primary">Start Shopping</a>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist Section -->
+                        <div class="dashboard-section" id="sectionWishlist">
+                            <h1 class="dashboard-title">My Wishlist</h1>
+                            <div id="wishlistItems" class="product-grid">
+                                <!-- Wishlist items loaded via JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Settings Section -->
+                        <div class="dashboard-section" id="sectionSettings">
+                            <h1 class="dashboard-title">Account Settings</h1>
+                            <div class="settings-card fade-in">
+                                <h2>Profile Information</h2>
+                                <form id="profileForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-input" value="John">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-input" value="Doe">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-input" value="john@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-input" placeholder="(555) 123-4567">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+
+                            <div class="settings-card fade-in">
+                                <h2>Change Password</h2>
+                                <form id="passwordForm">
+                                    <div class="form-group">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/components.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auth tabs
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.auth-content').forEach(c => c.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(this.dataset.tab + 'Form').classList.add('active');
+                });
+            });
+
+            // Dashboard navigation
+            document.querySelectorAll('.dashboard-nav .nav-item[data-section]').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.dataset.section;
+
+                    document.querySelectorAll('.dashboard-nav .nav-item').forEach(i => i.classList.remove('active'));
+                    document.querySelectorAll('.dashboard-section').forEach(s => s.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById('section' + section.charAt(0).toUpperCase() + section.slice(1)).classList.add('active');
+                });
+            });
+
+            // Check login state
+            checkLoginState();
+
+            // Login form
+            document.getElementById('loginFormElement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Simulate login
+                const email = this.querySelector('input[type="email"]').value;
+                window.Sluekie.User.login({
+                    email: email,
+                    firstName: 'John',
+                    lastName: 'Doe'
+                });
+                window.Sluekie.Toast.show('Welcome back!', 'success');
+                checkLoginState();
+            });
+
+            // Register form
+            document.getElementById('registerFormElement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.Sluekie.Toast.show('Account created successfully!', 'success');
+                document.querySelector('.auth-tab[data-tab="login"]').click();
+            });
+        });
+
+        function checkLoginState() {
+            const isLoggedIn = window.Sluekie?.User?.isLoggedIn();
+            const authForms = document.getElementById('authForms');
+            const dashboard = document.getElementById('dashboard');
+
+            if (isLoggedIn) {
+                authForms.style.display = 'none';
+                dashboard.style.display = 'block';
+
+                // Update user info
+                const user = window.Sluekie.User.data;
+                document.getElementById('userName').textContent = `${user.firstName} ${user.lastName}`;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userAvatar').textContent = user.firstName.charAt(0) + user.lastName.charAt(0);
+
+                // Update stats
+                document.getElementById('wishlistCount').textContent = window.Sluekie.Wishlist.items.length;
+                document.getElementById('cartCount').textContent = window.Sluekie.Cart.getItemCount();
+
+                // Load wishlist
+                renderWishlist();
+            } else {
+                authForms.style.display = 'block';
+                dashboard.style.display = 'none';
+            }
+        }
+
+        function renderWishlist() {
+            const wishlistItems = document.getElementById('wishlistItems');
+            const items = window.Sluekie?.Wishlist?.items || [];
+
+            if (items.length === 0) {
+                wishlistItems.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <h3>Your wishlist is empty</h3>
+                        <p>Save items you love to your wishlist.</p>
+                        <a href="products.html" class="btn btn-primary">Browse Products</a>
+                    </div>
+                `;
+                return;
+            }
+
+            wishlistItems.innerHTML = items.map(item => `
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">${item.name}</h3>
+                        <div class="product-pricing">
+                            <span class="price">$${item.price}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function logout() {
+            window.Sluekie.User.logout();
+            window.Sluekie.Toast.show('You have been signed out', 'info');
+            checkLoginState();
+        }
+    </script>
+
+    <style>
+        /* Account Page Styles */
+        .account-section {
+            padding-top: 140px;
+            min-height: 100vh;
+        }
+
+        /* Auth Container */
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .auth-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--soft-mist);
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 20px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .auth-tab.active {
+            color: var(--deep-sleep);
+        }
+
+        .auth-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--sage-calm);
+        }
+
+        .auth-content {
+            padding: 40px;
+            display: none;
+        }
+
+        .auth-content.active {
+            display: block;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+        }
+
+        .auth-header p {
+            color: var(--deep-charcoal);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .forgot-password {
+            color: var(--deep-charcoal);
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            color: var(--deep-sleep);
+        }
+
+        .auth-divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--soft-mist);
+        }
+
+        .auth-divider span {
+            background: white;
+            padding: 0 15px;
+            color: var(--deep-charcoal);
+            font-size: 14px;
+            position: relative;
+        }
+
+        .social-auth {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-auth-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border: 2px solid var(--soft-mist);
+            border-radius: 12px;
+            background: white;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-auth-btn:hover {
+            border-color: var(--sage-calm);
+            background: var(--soft-mist);
+        }
+
+        /* Dashboard */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+
+        .dashboard-sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .user-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--soft-mist);
+            margin-bottom: 25px;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--deep-sleep);
+            font-size: 20px;
+        }
+
+        .user-info h3 {
+            font-size: 18px;
+            color: var(--deep-sleep);
+            margin-bottom: 4px;
+        }
+
+        .user-info p {
+            font-size: 13px;
+            color: var(--deep-charcoal);
+            opacity: 0.7;
+        }
+
+        .dashboard-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dashboard-nav .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            color: var(--deep-charcoal);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-nav .nav-item:hover {
+            background: var(--soft-mist);
+            color: var(--deep-sleep);
+        }
+
+        .dashboard-nav .nav-item.active {
+            background: var(--sage-calm);
+            color: var(--deep-sleep);
+        }
+
+        .dashboard-main {
+            min-height: 500px;
+        }
+
+        .dashboard-section {
+            display: none;
+        }
+
+        .dashboard-section.active {
+            display: block;
+        }
+
+        .dashboard-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-sleep);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--deep-sleep);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--deep-charcoal);
+        }
+
+        .quick-actions h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-card svg {
+            color: var(--sage-calm);
+            margin-bottom: 15px;
+        }
+
+        .action-card span {
+            display: block;
+            font-weight: 600;
+            color: var(--deep-sleep);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+        }
+
+        .empty-state svg {
+            color: var(--sage-calm);
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: var(--deep-charcoal);
+            margin-bottom: 25px;
+        }
+
+        .settings-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .settings-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--deep-sleep);
+            margin-bottom: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-sidebar {
+                position: static;
+            }
+
+            .stats-grid,
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

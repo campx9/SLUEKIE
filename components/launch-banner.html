@@ -1,0 +1,164 @@
+<!-- SLUEKIE Coming Soon Launch Banner -->
+<div class="launch-banner" id="launchBanner">
+    <div class="launch-banner-content">
+        <div class="launch-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+        </div>
+        <span class="launch-text">
+            <strong>Coming Soon!</strong> Sluekie is launching in 2025. Join our waitlist for exclusive early access and special launch pricing.
+        </span>
+        <a href="#newsletter" class="launch-cta">Join Waitlist</a>
+        <button class="launch-close" onclick="closeLaunchBanner()" aria-label="Close banner">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<style>
+.launch-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10002;
+    background: linear-gradient(135deg, var(--deep-sleep) 0%, var(--twilight) 100%);
+    padding: 12px 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.launch-banner.hidden {
+    transform: translateY(-100%);
+}
+
+.launch-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.launch-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(203, 218, 213, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-calm);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.launch-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    text-align: center;
+}
+
+.launch-text strong {
+    color: var(--sage-calm);
+}
+
+.launch-cta {
+    background: var(--sage-calm);
+    color: var(--deep-sleep);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.launch-cta:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.launch-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.launch-close:hover {
+    color: white;
+}
+
+/* Adjust navbar when banner is visible */
+body.banner-visible .navbar {
+    top: 60px;
+}
+
+body.banner-visible .page-header {
+    padding-top: 220px;
+}
+
+body.banner-visible .hero {
+    padding-top: 160px;
+}
+
+@media (max-width: 768px) {
+    .launch-banner {
+        padding: 15px;
+    }
+
+    .launch-banner-content {
+        gap: 10px;
+    }
+
+    .launch-icon {
+        display: none;
+    }
+
+    .launch-text {
+        font-size: 13px;
+    }
+
+    body.banner-visible .navbar {
+        top: 80px;
+    }
+
+    body.banner-visible .page-header {
+        padding-top: 240px;
+    }
+}
+</style>
+
+<script>
+function closeLaunchBanner() {
+    const banner = document.getElementById('launchBanner');
+    banner.classList.add('hidden');
+    document.body.classList.remove('banner-visible');
+    sessionStorage.setItem('sluekie_banner_closed', 'true');
+}
+
+// Check if banner was closed this session
+document.addEventListener('DOMContentLoaded', function() {
+    const bannerClosed = sessionStorage.getItem('sluekie_banner_closed');
+    if (!bannerClosed) {
+        document.body.classList.add('banner-visible');
+    } else {
+        document.getElementById('launchBanner')?.classList.add('hidden');
+    }
+});
+</script>
