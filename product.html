@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Sluekie</title>
+    <title>Luxury Bedding Product Details - Premium Organic Sleep Solutions | Sluekie</title>
 
-    <meta name="description" content="Premium luxury bedding from Sluekie. Organic materials, innovative design.">
+    <meta name="description" content="Discover premium luxury bedding from Sluekie. GOTS-certified organic materials, innovative design, 30-night trial. Free shipping & lifetime warranty.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Open Graph -->
+    <!-- Canonical URL (dynamically set by JavaScript) -->
+    <link rel="canonical" href="https://sluekie.com/product.html">
+
+    <!-- Open Graph (dynamically enhanced by JavaScript) -->
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="Sluekie">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sluekie">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -91,9 +102,105 @@
                 return;
             }
 
-            // Update page title
-            document.title = `${product.name} - Sluekie`;
+            // Update page title and meta tags
+            document.title = `${product.name} - Premium Luxury Bedding | Sluekie`;
             breadcrumbProduct.textContent = product.name;
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.setAttribute('content', `${product.description} GOTS-certified organic materials. 30-night trial. Free shipping. Shop ${product.name} at Sluekie.`);
+            }
+
+            // Update Open Graph tags
+            const ogTitle = document.querySelector('meta[property="og:title"]') || document.createElement('meta');
+            ogTitle.setAttribute('property', 'og:title');
+            ogTitle.setAttribute('content', `${product.name} | Sluekie`);
+            if (!document.querySelector('meta[property="og:title"]')) document.head.appendChild(ogTitle);
+
+            const ogDesc = document.querySelector('meta[property="og:description"]') || document.createElement('meta');
+            ogDesc.setAttribute('property', 'og:description');
+            ogDesc.setAttribute('content', product.description);
+            if (!document.querySelector('meta[property="og:description"]')) document.head.appendChild(ogDesc);
+
+            const ogUrl = document.querySelector('meta[property="og:url"]') || document.createElement('meta');
+            ogUrl.setAttribute('property', 'og:url');
+            ogUrl.setAttribute('content', `https://sluekie.com/product.html?id=${productId}`);
+            if (!document.querySelector('meta[property="og:url"]')) document.head.appendChild(ogUrl);
+
+            const ogImage = document.querySelector('meta[property="og:image"]') || document.createElement('meta');
+            ogImage.setAttribute('property', 'og:image');
+            ogImage.setAttribute('content', `https://sluekie.com/${product.image}`);
+            if (!document.querySelector('meta[property="og:image"]')) document.head.appendChild(ogImage);
+
+            // Update canonical URL
+            const canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) {
+                canonical.setAttribute('href', `https://sluekie.com/product.html?id=${productId}`);
+            }
+
+            // Add Product Schema JSON-LD
+            const productSchema = {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": product.name,
+                "description": product.description,
+                "image": `https://sluekie.com/${product.image}`,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Sluekie"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": `https://sluekie.com/product.html?id=${productId}`,
+                    "priceCurrency": "USD",
+                    "price": product.price,
+                    "priceValidUntil": "2025-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "Sluekie"
+                    }
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "128"
+                },
+                "category": product.category
+            };
+
+            const productSchemaScript = document.createElement('script');
+            productSchemaScript.type = 'application/ld+json';
+            productSchemaScript.textContent = JSON.stringify(productSchema);
+            document.head.appendChild(productSchemaScript);
+
+            // Add BreadcrumbList Schema JSON-LD
+            const breadcrumbSchema = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://sluekie.com/"
+                },{
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Shop",
+                    "item": "https://sluekie.com/products.html"
+                },{
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": product.name,
+                    "item": `https://sluekie.com/product.html?id=${productId}`
+                }]
+            };
+
+            const breadcrumbSchemaScript = document.createElement('script');
+            breadcrumbSchemaScript.type = 'application/ld+json';
+            breadcrumbSchemaScript.textContent = JSON.stringify(breadcrumbSchema);
+            document.head.appendChild(breadcrumbSchemaScript);
 
             // Render product detail
             productDetail.innerHTML = `
@@ -203,6 +310,378 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Trust Badges Section -->
+                <div class="trust-badges-section fade-in">
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <div class="trust-badge-content">
+                            <h4>Free Returns</h4>
+                            <p>Easy returns within 30 days</p>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <div class="trust-badge-content">
+                            <h4>Secure Checkout</h4>
+                            <p>SSL encrypted payment</p>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div class="trust-badge-content">
+                            <h4>Fast Shipping</h4>
+                            <p>Ships within 1-2 business days</p>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <div class="trust-badge-content">
+                            <h4>24/7 Support</h4>
+                            <p>Customer service available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabbed Product Information -->
+                <div class="product-tabs-section fade-in">
+                    <div class="tabs-header">
+                        <button class="tab-button active" data-tab="description">Description</button>
+                        <button class="tab-button" data-tab="specifications">Specifications</button>
+                        <button class="tab-button" data-tab="care">Care Instructions</button>
+                        <button class="tab-button" data-tab="reviews">Reviews</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <div class="tab-panel active" id="description-tab">
+                            <h3>Product Description</h3>
+                            <p>Experience the ultimate in luxury sleep with our ${product.name}. Crafted from the finest organic materials, this premium bedding is designed to transform your bedroom into a serene sanctuary.</p>
+
+                            <p>Our innovative design combines traditional craftsmanship with modern technology to deliver unparalleled comfort. Each thread is carefully selected to ensure maximum softness while maintaining exceptional durability.</p>
+
+                            <h4>Why Choose Sluekie?</h4>
+                            <ul>
+                                <li>100% organic, sustainably sourced materials</li>
+                                <li>Hypoallergenic and gentle on sensitive skin</li>
+                                <li>Temperature-regulating fabric for year-round comfort</li>
+                                <li>Expertly crafted with reinforced stitching</li>
+                                <li>OEKO-TEX certified for safety and quality</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-panel" id="specifications-tab">
+                            <h3>Technical Specifications</h3>
+                            <table class="specs-table">
+                                <tr>
+                                    <td><strong>Material:</strong></td>
+                                    <td>100% Organic Egyptian Cotton (400 Thread Count)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weave:</strong></td>
+                                    <td>Sateen Weave for Enhanced Softness</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight:</strong></td>
+                                    <td>Lightweight & Breathable (2.5 lbs)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Certifications:</strong></td>
+                                    <td>OEKO-TEX Standard 100, GOTS Certified</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Care:</strong></td>
+                                    <td>Machine Washable, Tumble Dry Low</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Origin:</strong></td>
+                                    <td>Ethically Manufactured in Portugal</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Warranty:</strong></td>
+                                    <td>Lifetime Warranty Against Defects</td>
+                                </tr>
+                            </table>
+
+                            <h4 style="margin-top: 30px;">Size Guide</h4>
+                            <table class="specs-table">
+                                <tr>
+                                    <td><strong>Twin:</strong></td>
+                                    <td>66" x 96" (168 x 244 cm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Queen:</strong></td>
+                                    <td>90" x 102" (229 x 259 cm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>King:</strong></td>
+                                    <td>108" x 102" (274 x 259 cm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cal King:</strong></td>
+                                    <td>104" x 108" (264 x 274 cm)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="tab-panel" id="care-tab">
+                            <h3>Care Instructions</h3>
+                            <div class="care-instructions">
+                                <div class="care-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <div>
+                                        <h4>Before First Use</h4>
+                                        <p>Wash before first use to maximize softness. The fabric will become softer with each wash.</p>
+                                    </div>
+                                </div>
+                                <div class="care-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                    </svg>
+                                    <div>
+                                        <h4>Washing</h4>
+                                        <p>Machine wash cold with like colors. Use mild, eco-friendly detergent. Avoid bleach and fabric softeners.</p>
+                                    </div>
+                                </div>
+                                <div class="care-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 8v8"></path>
+                                    </svg>
+                                    <div>
+                                        <h4>Drying</h4>
+                                        <p>Tumble dry on low heat. Remove promptly to minimize wrinkles. For best results, line dry when possible.</p>
+                                    </div>
+                                </div>
+                                <div class="care-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    </svg>
+                                    <div>
+                                        <h4>Storage</h4>
+                                        <p>Store in a cool, dry place. Avoid direct sunlight for extended periods to preserve color vibrancy.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="care-tips">
+                                <h4>Pro Tips for Longevity</h4>
+                                <ul>
+                                    <li>Rotate your bedding weekly to ensure even wear</li>
+                                    <li>Avoid over-drying which can damage natural fibers</li>
+                                    <li>Iron on low heat if needed, while slightly damp</li>
+                                    <li>Keep pets with sharp claws away from bedding</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-panel" id="reviews-tab">
+                            <div class="reviews-summary">
+                                <div class="rating-overview">
+                                    <div class="rating-score">4.9</div>
+                                    <div class="rating-details">
+                                        <div class="stars-large">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                        </div>
+                                        <p>Based on 128 reviews</p>
+                                    </div>
+                                </div>
+                                <div class="rating-breakdown">
+                                    <div class="rating-bar">
+                                        <span>5 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                                        <span>109</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 12%"></div></div>
+                                        <span>15</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                                        <span>3</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2 stars</span>
+                                        <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1 star</span>
+                                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <strong>Sarah M.</strong>
+                                            <span class="verified">✓ Verified Purchase</span>
+                                        </div>
+                                        <div class="review-stars">★★★★★</div>
+                                    </div>
+                                    <p class="review-text">"Absolutely love these sheets! The quality is exceptional and they get softer with every wash. Best investment I've made for my bedroom."</p>
+                                    <span class="review-date">December 1, 2025</span>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <strong>Michael R.</strong>
+                                            <span class="verified">✓ Verified Purchase</span>
+                                        </div>
+                                        <div class="review-stars">★★★★★</div>
+                                    </div>
+                                    <p class="review-text">"The attention to detail is incredible. You can feel the quality immediately. Perfect temperature regulation - not too hot, not too cold."</p>
+                                    <span class="review-date">November 28, 2025</span>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <strong>Emily T.</strong>
+                                            <span class="verified">✓ Verified Purchase</span>
+                                        </div>
+                                        <div class="review-stars">★★★★★</div>
+                                    </div>
+                                    <p class="review-text">"I have sensitive skin and these sheets are perfect. No irritation, incredibly soft, and the organic materials make me feel good about my purchase."</p>
+                                    <span class="review-date">November 22, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Calculator -->
+                <div class="shipping-calculator fade-in">
+                    <h3>Estimate Shipping</h3>
+                    <p class="calculator-subtitle">Enter your zip code to see delivery options</p>
+                    <div class="calculator-form">
+                        <input type="text" id="zipCode" placeholder="Enter ZIP code" maxlength="10">
+                        <button class="btn btn-secondary" id="calculateShipping">Calculate</button>
+                    </div>
+                    <div id="shippingResults" class="shipping-results"></div>
+                </div>
+
+                <!-- Ask a Question Form -->
+                <div class="ask-question-section fade-in">
+                    <h3>Have a Question?</h3>
+                    <p class="question-subtitle">Our team typically responds within 24 hours</p>
+                    <form class="question-form" id="questionForm">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <textarea placeholder="Your Question" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Question</button>
+                    </form>
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share fade-in">
+                    <h4>Share this product</h4>
+                    <div class="share-buttons">
+                        <button class="share-btn facebook" onclick="shareOnFacebook()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Facebook
+                        </button>
+                        <button class="share-btn twitter" onclick="shareOnTwitter()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                            Twitter
+                        </button>
+                        <button class="share-btn pinterest" onclick="shareOnPinterest()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6c-3.31 0-6 2.69-6 6 0 2.48 1.52 4.61 3.68 5.5-.05-.45-.09-.94-.02-1.35.06-.37.41-1.73.41-1.73s-.1-.22-.1-.54c0-.51.3-.89.67-.89.31 0 .47.24.47.52 0 .32-.2.79-.31 1.23-.09.37.19.67.55.67.66 0 1.17-.7 1.17-1.7 0-.89-.64-1.51-1.55-1.51-.97 0-1.54.73-1.54 1.48 0 .29.11.61.25.78.03.03.03.06.02.09-.02.11-.09.34-.1.39-.01.06-.05.08-.12.05-.44-.21-.71-.84-.71-1.36 0-1.17.85-2.25 2.45-2.25 1.29 0 2.29.92 2.29 2.14 0 1.28-.81 2.31-1.93 2.31-.38 0-.73-.19-.85-.43l-.23.88c-.08.33-.31.74-.47 1-.35.09-.72.14-1.1.14z" fill="white"></path>
+                            </svg>
+                            Pinterest
+                        </button>
+                        <button class="share-btn email" onclick="shareViaEmail()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" fill="none"></polyline>
+                            </svg>
+                            Email
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enhanced Guarantees Section -->
+                <div class="enhanced-guarantees fade-in">
+                    <h3>Our Promise to You</h3>
+                    <div class="guarantees-grid">
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h4>30-Night Sleep Trial</h4>
+                            <p>Try it risk-free for 30 nights. If you're not completely satisfied, return it for a full refund. No questions asked, no hassle.</p>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/>
+                                </svg>
+                            </div>
+                            <h4>Lifetime Warranty</h4>
+                            <p>We stand behind our quality. Our lifetime warranty covers any manufacturing defects. Your satisfaction is guaranteed for life.</p>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/>
+                                </svg>
+                            </div>
+                            <h4>Free Shipping & Returns</h4>
+                            <p>Enjoy complimentary shipping on all orders over $100. Returns are always free and easy with our prepaid return labels.</p>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <h4>Best Price Guarantee</h4>
+                            <p>Found a lower price elsewhere? We'll match it and give you an additional 10% off. That's our commitment to value.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Your Sleep Setup -->
+                <div class="cross-sell-section fade-in">
+                    <h3>Complete Your Sleep Setup</h3>
+                    <p class="cross-sell-subtitle">Customers who bought this also loved</p>
+                    <div class="cross-sell-grid" id="crossSellProducts">
+                        <!-- Products will be loaded via JavaScript -->
+                    </div>
+                </div>
             `;
 
             // Quantity controls
@@ -251,6 +730,87 @@
                 });
             });
 
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(tabName + '-tab').classList.add('active');
+                });
+            });
+
+            // Shipping Calculator
+            document.getElementById('calculateShipping').addEventListener('click', function() {
+                const zipCode = document.getElementById('zipCode').value.trim();
+                const resultsDiv = document.getElementById('shippingResults');
+
+                if (!zipCode) {
+                    resultsDiv.innerHTML = '<p class="error-message">Please enter a ZIP code</p>';
+                    return;
+                }
+
+                // Simulate shipping calculation
+                resultsDiv.innerHTML = `
+                    <div class="shipping-option">
+                        <div class="shipping-info">
+                            <strong>Standard Shipping</strong>
+                            <p>5-7 business days</p>
+                        </div>
+                        <span class="shipping-price">FREE</span>
+                    </div>
+                    <div class="shipping-option">
+                        <div class="shipping-info">
+                            <strong>Express Shipping</strong>
+                            <p>2-3 business days</p>
+                        </div>
+                        <span class="shipping-price">$15.00</span>
+                    </div>
+                    <div class="shipping-option">
+                        <div class="shipping-info">
+                            <strong>Next Day Delivery</strong>
+                            <p>1 business day</p>
+                        </div>
+                        <span class="shipping-price">$29.99</span>
+                    </div>
+                `;
+            });
+
+            // Question Form
+            document.getElementById('questionForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your question! Our team will respond within 24 hours.');
+                this.reset();
+            });
+
+            // Cross-sell products
+            const crossSell = window.Sluekie.Products.getAll()
+                .filter(p => p.id !== product.id && p.category === product.category)
+                .slice(0, 4);
+
+            document.getElementById('crossSellProducts').innerHTML = crossSell.map(p => `
+                <div class="cross-sell-item">
+                    <a href="product.html?id=${p.id}">
+                        <div class="cross-sell-image">
+                            <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'">
+                        </div>
+                        <div class="cross-sell-info">
+                            <h4>${p.name}</h4>
+                            <div class="cross-sell-price">
+                                <span class="price">$${p.price}</span>
+                                <span class="original">$${p.originalPrice}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `).join('');
+
             // Related products
             const related = window.Sluekie.Products.getAll()
                 .filter(p => p.id !== product.id)
@@ -275,6 +835,31 @@
                 </div>
             `).join('');
         });
+
+        // Social Sharing Functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnPinterest() {
+            const url = encodeURIComponent(window.location.href);
+            const media = encodeURIComponent(document.querySelector('.main-product-img')?.src || '');
+            const description = encodeURIComponent(document.title);
+            window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareViaEmail() {
+            const subject = encodeURIComponent(document.title);
+            const body = encodeURIComponent(`Check out this product: ${window.location.href}`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
     </script>
 
     <style>
@@ -586,7 +1171,696 @@
             margin-top: 80px;
         }
 
-        /* Responsive */
+        /* Trust Badges Section */
+        .trust-badges-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            background: var(--soft-mist);
+            transform: translateY(-2px);
+        }
+
+        .trust-badge svg {
+            color: var(--sage-calm);
+            flex-shrink: 0;
+        }
+
+        .trust-badge-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--deep-sleep);
+            margin-bottom: 5px;
+        }
+
+        .trust-badge-content p {
+            font-size: 12px;
+            color: var(--deep-charcoal);
+            margin: 0;
+        }
+
+        /* Product Tabs Section */
+        .product-tabs-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .tabs-header {
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid var(--soft-mist);
+            margin-bottom: 30px;
+        }
+
+        .tab-button {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .tab-button:hover {
+            color: var(--deep-sleep);
+        }
+
+        .tab-button.active {
+            color: var(--deep-sleep);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--deep-sleep);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tabs-content {
+            padding: 20px 0;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-panel h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 20px;
+        }
+
+        .tab-panel h4 {
+            font-size: 18px;
+            color: var(--deep-sleep);
+            margin: 25px 0 15px;
+        }
+
+        .tab-panel p {
+            color: var(--deep-charcoal);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .tab-panel ul {
+            list-style: disc;
+            margin-left: 25px;
+            color: var(--deep-charcoal);
+            line-height: 2;
+        }
+
+        .tab-panel li {
+            margin-bottom: 8px;
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid var(--soft-mist);
+        }
+
+        .specs-table td {
+            padding: 15px 10px;
+            color: var(--deep-charcoal);
+        }
+
+        .specs-table td:first-child {
+            width: 200px;
+            color: var(--deep-sleep);
+        }
+
+        /* Care Instructions */
+        .care-instructions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .care-item {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: var(--soft-mist);
+            border-radius: 12px;
+        }
+
+        .care-item svg {
+            color: var(--sage-calm);
+            flex-shrink: 0;
+        }
+
+        .care-item h4 {
+            font-size: 15px;
+            color: var(--deep-sleep);
+            margin: 0 0 8px;
+        }
+
+        .care-item p {
+            font-size: 13px;
+            color: var(--deep-charcoal);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .care-tips {
+            background: var(--soft-mist);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .care-tips h4 {
+            margin-top: 0;
+        }
+
+        .care-tips ul {
+            margin-bottom: 0;
+        }
+
+        /* Reviews Section */
+        .reviews-summary {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            padding: 30px;
+            background: var(--soft-mist);
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .rating-overview {
+            text-align: center;
+        }
+
+        .rating-score {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--deep-sleep);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stars-large {
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .rating-details p {
+            color: var(--deep-charcoal);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .rating-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rating-bar {
+            display: grid;
+            grid-template-columns: 60px 1fr 40px;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .rating-bar .bar {
+            height: 8px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .rating-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        .reviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .review-item {
+            padding: 25px;
+            background: var(--soft-mist);
+            border-radius: 12px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reviewer-info strong {
+            color: var(--deep-sleep);
+            font-size: 15px;
+        }
+
+        .verified {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        .review-text {
+            color: var(--deep-charcoal);
+            line-height: 1.7;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* Shipping Calculator */
+        .shipping-calculator {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .shipping-calculator h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+        }
+
+        .calculator-subtitle {
+            color: var(--deep-charcoal);
+            margin-bottom: 25px;
+        }
+
+        .calculator-form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .calculator-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--soft-mist);
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .calculator-form input:focus {
+            outline: none;
+            border-color: var(--sage-calm);
+        }
+
+        .shipping-results {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .shipping-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--soft-mist);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .shipping-option:hover {
+            background: var(--sage-calm);
+            transform: translateX(5px);
+        }
+
+        .shipping-info strong {
+            display: block;
+            color: var(--deep-sleep);
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .shipping-info p {
+            color: var(--deep-charcoal);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .shipping-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--deep-sleep);
+        }
+
+        .error-message {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 0;
+        }
+
+        /* Ask a Question Section */
+        .ask-question-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .ask-question-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+        }
+
+        .question-subtitle {
+            color: var(--deep-charcoal);
+            margin-bottom: 25px;
+        }
+
+        .question-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .question-form input,
+        .question-form textarea {
+            padding: 15px 20px;
+            border: 2px solid var(--soft-mist);
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .question-form input:focus,
+        .question-form textarea:focus {
+            outline: none;
+            border-color: var(--sage-calm);
+        }
+
+        .question-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .question-form button {
+            align-self: flex-start;
+        }
+
+        /* Social Share Section */
+        .social-share {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin: 40px 0;
+        }
+
+        .social-share h4 {
+            font-size: 16px;
+            color: var(--deep-sleep);
+            margin-bottom: 20px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-btn.facebook {
+            background: #1877f2;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.pinterest {
+            background: #e60023;
+        }
+
+        .share-btn.email {
+            background: #666;
+        }
+
+        /* Enhanced Guarantees Section */
+        .enhanced-guarantees {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .enhanced-guarantees h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--deep-sleep);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .guarantee-card {
+            background: var(--soft-mist);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guarantee-icon svg {
+            color: var(--sage-calm);
+        }
+
+        .guarantee-card h4 {
+            font-size: 20px;
+            color: var(--deep-sleep);
+            margin-bottom: 15px;
+        }
+
+        .guarantee-card p {
+            color: var(--deep-charcoal);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Cross-Sell Section */
+        .cross-sell-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .cross-sell-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--deep-sleep);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .cross-sell-subtitle {
+            text-align: center;
+            color: var(--deep-charcoal);
+            margin-bottom: 35px;
+        }
+
+        .cross-sell-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .cross-sell-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cross-sell-item:hover {
+            border-color: var(--sage-calm);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cross-sell-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .cross-sell-image {
+            height: 200px;
+            background: linear-gradient(145deg, var(--sage-calm), var(--lavender-smoke));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cross-sell-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .cross-sell-item:hover .cross-sell-image img {
+            transform: scale(1.1);
+        }
+
+        .cross-sell-info {
+            padding: 20px;
+        }
+
+        .cross-sell-info h4 {
+            font-size: 15px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cross-sell-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cross-sell-price .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--deep-sleep);
+        }
+
+        .cross-sell-price .original {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        /* Responsive Styles */
         @media (max-width: 1024px) {
             .product-detail {
                 grid-template-columns: 1fr;
@@ -595,6 +1869,26 @@
 
             .product-gallery {
                 position: static;
+            }
+
+            .trust-badges-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cross-sell-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .care-instructions {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-summary {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -613,6 +1907,37 @@
             }
 
             .product-actions-detail {
+                flex-direction: column;
+            }
+
+            .trust-badges-section {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs-header {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab-button {
+                padding: 12px 20px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                justify-content: center;
+            }
+
+            .cross-sell-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-form {
                 flex-direction: column;
             }
         }
