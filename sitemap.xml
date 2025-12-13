@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://sluekie.com/</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Products Page -->
+    <url>
+        <loc>https://sluekie.com/products.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://sluekie.com/about.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://sluekie.com/contact.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Account Page -->
+    <url>
+        <loc>https://sluekie.com/account.html</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Individual Product Pages -->
+    <url>
+        <loc>https://sluekie.com/product.html?id=luxe-sleep-set</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/product.html?id=cloud-nine-pillows</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/product.html?id=serenity-sheets</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/product.html?id=twilight-duvet</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/product.html?id=velvet-comfort-blanket</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/product.html?id=sleep-mask-elite</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Category Pages (if they exist or will exist) -->
+    <url>
+        <loc>https://sluekie.com/products.html?category=bedding</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/products.html?category=pillows</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/products.html?category=sheets</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://sluekie.com/products.html?category=accessories</loc>
+        <lastmod>2025-12-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>

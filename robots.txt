@@ -1,0 +1,48 @@
+# Sluekie Robots.txt
+# Updated: 2025-12-13
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sluekie.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific directives for major search engines
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Google Mobile Bot
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Disallow admin or private areas (if any exist in the future)
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /api/
+Disallow: /temp/
+Disallow: /_*
+
+# Allow CSS and JS for proper rendering
+User-agent: *
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
