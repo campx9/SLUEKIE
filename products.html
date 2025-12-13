@@ -57,6 +57,90 @@
         </div>
     </header>
 
+    <!-- Trust Banner -->
+    <section class="trust-banner">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/>
+                    </svg>
+                    <span>Free Shipping Over $99</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>30-Night Risk-Free Trial</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/>
+                    </svg>
+                    <span>Lifetime Warranty</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    <span>OEKO-TEX Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Showcase -->
+    <section class="category-showcase">
+        <div class="container">
+            <div class="category-cards">
+                <a href="products.html?category=bedding" class="category-card">
+                    <div class="category-image" style="background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));">
+                        <span class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 4h20v16H2z"/><path d="M2 8h20"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <h3>Bedding Sets</h3>
+                    <p>Complete luxury collections</p>
+                </a>
+                <a href="products.html?category=pillows" class="category-card">
+                    <div class="category-image" style="background: linear-gradient(135deg, var(--lavender-smoke), var(--blush-dream));">
+                        <span class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <ellipse cx="12" cy="12" rx="10" ry="6"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <h3>Pillows</h3>
+                    <p>Ergonomic support</p>
+                </a>
+                <a href="products.html?category=sheets" class="category-card">
+                    <div class="category-image" style="background: linear-gradient(135deg, var(--soft-mist), var(--sage-calm));">
+                        <span class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <h3>Sheets</h3>
+                    <p>Organic cotton luxury</p>
+                </a>
+                <a href="products.html?category=accessories" class="category-card">
+                    <div class="category-image" style="background: linear-gradient(135deg, var(--blush-dream), var(--soft-mist));">
+                        <span class="category-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Sleep essentials</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Shop Section -->
     <section class="section shop-section">
         <div class="container">
@@ -316,9 +400,89 @@
     </script>
 
     <style>
+        /* Trust Banner */
+        .trust-banner {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--deep-sleep);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .trust-item svg {
+            color: var(--sage-calm);
+        }
+
+        /* Category Showcase */
+        .category-showcase {
+            padding: 0 0 40px;
+        }
+
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-icon {
+            color: var(--deep-sleep);
+        }
+
+        .category-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--deep-sleep);
+            margin-bottom: 6px;
+        }
+
+        .category-card p {
+            font-size: 13px;
+            color: var(--deep-charcoal);
+        }
+
         /* Shop Page Styles */
         .shop-section {
-            padding-top: 40px;
+            padding-top: 0;
         }
 
         .shop-layout {
@@ -494,6 +658,10 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .category-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .shop-layout {
                 grid-template-columns: 1fr;
             }
@@ -511,6 +679,23 @@
         }
 
         @media (max-width: 768px) {
+            .trust-items {
+                gap: 25px;
+            }
+
+            .trust-item span {
+                font-size: 13px;
+            }
+
+            .category-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .category-card {
+                padding: 20px 16px;
+            }
+
             .shop-sidebar {
                 grid-template-columns: 1fr;
             }
@@ -519,6 +704,14 @@
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trust-items {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
         }
     </style>
