@@ -70,13 +70,6 @@
                 <a href="#">Track Order</a>
             </div>
 
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Accessibility</a>
-            </div>
         </div>
 
         <div class="footer-bottom">
@@ -102,6 +95,11 @@
                             <text x="19" y="15" text-anchor="middle" font-size="6" fill="currentColor">PayPal</text>
                         </svg>
                     </div>
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
                 </div>
             </div>
 
@@ -217,6 +215,22 @@
     gap: 8px;
 }
 
+/* Legal Links */
+.legal-links {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: var(--sage-calm);
+}
+
 /* TNAADO Badge */
 .tnaado-badge-container {
     display: flex;
@@ -294,9 +308,9 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .footer-content {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .footer-brand {
@@ -342,6 +356,10 @@
         align-items: center;
     }
 
+    .legal-links {
+        justify-content: center;
+    }
+
     .tnaado-badge-container {
         order: -1;
         flex-direction: column-reverse;
@@ -356,6 +374,11 @@
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 </style>

@@ -988,7 +988,7 @@ img {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr repeat(4, 1fr);
+    grid-template-columns: 1.5fr repeat(3, 1fr);
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -1041,6 +1041,12 @@ img {
     justify-content: center;
     color: white;
     transition: var(--transition-normal);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .social-link:hover {
