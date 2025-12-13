@@ -17,7 +17,6 @@
             <div class="footer-section footer-brand">
                 <a href="index.html" class="footer-logo">
                     <img src="images/brand/logo.png" alt="Sluekie" height="40">
-                    <span>Sluekie</span>
                 </a>
                 <p>Where dreams begin. Crafting exceptional sleep experiences through luxury design and scientific innovation.</p>
                 <div class="social-links">
@@ -231,6 +230,16 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-newsletter {
         grid-template-columns: 1fr;
@@ -267,6 +276,10 @@
 
     .footer-bottom-left {
         align-items: center;
+    }
+
+    .tnaado-badge-container {
+        order: -1;
     }
 }
 
