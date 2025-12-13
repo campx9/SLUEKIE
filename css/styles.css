@@ -106,11 +106,14 @@ img {
     right: 0;
     z-index: 1000;
     padding: 20px 0;
+    background: rgba(15, 27, 46, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: var(--transition-smooth);
 }
 
 .navbar.scrolled {
-    background: rgba(15, 27, 46, 0.95);
+    background: rgba(15, 27, 46, 0.98);
     backdrop-filter: blur(20px);
     padding: 15px 0;
     box-shadow: var(--shadow-md);
