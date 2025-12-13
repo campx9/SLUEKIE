@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(dir \"C:\\Users\\admin\\OneDrive\\Desktop\\DEVELOPMENT NEW\\sluekie\\SLUEKIE\\slueks\\slueks\")",
+      "Bash(copy:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix header/footer layout issues\n\n- Remove \"Sluekie\" text beside logo in header and footer\n- Fix footer grid to keep all sections on one row (5 columns)\n- Add responsive breakpoints for footer layout\n- Fix TNAADO badge spacing in footer bottom\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "WebFetch(domain:www.tnaado.ca)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate TNAADO verification badge in footer\n\n- Add \"TNAADO Inc. Brand and Trademark\" text to left of emblem\n- Add QR code linking to portfolio verification page\n- Update emblem link to portfolio item page\n- Add \"T\" letter overlay for Trademark classification\n- Add responsive styles for mobile layout\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix TNAADO badge to match official pattern\n\n- QR code now appears as hover overlay on emblem (not beside it)\n- \"T\" letter centered on emblem in TNAADO red (#A81327)\n- Text \"TNAADO Inc. Brand and Trademark\" positioned to left\n- QR links to portfolio verification page\n- Hover reveals QR code with smooth animation\n- Updated responsive styles for mobile\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
+    ]
+  }
+}

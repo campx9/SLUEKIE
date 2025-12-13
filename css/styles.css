@@ -85,8 +85,14 @@ img {
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Full-width container for header/footer */
+.container-wide {
+    max-width: 100%;
     padding: 0 40px;
 }
 
@@ -1151,7 +1157,11 @@ img {
    ======================================== */
 @media (max-width: 1024px) {
     .container {
-        padding: 0 30px;
+        padding: 0 20px;
+    }
+
+    .container-wide {
+        padding: 0 20px;
     }
 
     .hero-content {

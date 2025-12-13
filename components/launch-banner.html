@@ -21,18 +21,26 @@
 <style>
 .launch-banner {
     position: fixed;
-    top: 0;
+    top: 80px; /* Below the navbar */
     left: 0;
     right: 0;
-    z-index: 10002;
+    z-index: 999; /* Below navbar z-index of 1000 */
     background: linear-gradient(135deg, var(--deep-sleep) 0%, var(--twilight) 100%);
     padding: 12px 20px;
     transform: translateY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .launch-banner.hidden {
     transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* When navbar is scrolled/compact */
+body.navbar-scrolled .launch-banner {
+    top: 70px;
 }
 
 .launch-banner-content {
@@ -104,22 +112,19 @@
     color: white;
 }
 
-/* Adjust navbar when banner is visible */
-body.banner-visible .navbar {
-    top: 60px;
+/* Adjust content when banner is visible */
+body.banner-visible .hero {
+    padding-top: 160px;
 }
 
 body.banner-visible .page-header {
-    padding-top: 220px;
-}
-
-body.banner-visible .hero {
-    padding-top: 160px;
+    padding-top: 200px;
 }
 
 @media (max-width: 768px) {
     .launch-banner {
         padding: 15px;
+        top: 75px;
     }
 
     .launch-banner-content {
@@ -134,12 +139,12 @@ body.banner-visible .hero {
         font-size: 13px;
     }
 
-    body.banner-visible .navbar {
-        top: 80px;
+    body.banner-visible .hero {
+        padding-top: 180px;
     }
 
     body.banner-visible .page-header {
-        padding-top: 240px;
+        padding-top: 220px;
     }
 }
 </style>
