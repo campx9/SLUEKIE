@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    background: #0F1B2E;
+}
+
 :root {
     /* Brand Colors */
     --deep-sleep: #1E2D4D;
