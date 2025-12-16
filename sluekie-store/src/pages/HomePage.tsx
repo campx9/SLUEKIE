@@ -189,15 +189,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sleep Science Section - Asymmetric Layout */}
+      {/* Sleep Science Section */}
       <section style={{
         padding: '100px 0',
         position: 'relative',
         zIndex: 2,
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', padding: '0 40px' }}>
-          {/* Section Header - Offset to Left */}
-          <div className="slide-in-left" style={{ marginBottom: '70px', maxWidth: '700px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 40px' }}>
+          <div className="fade-in" style={{ textAlign: 'center', marginBottom: '70px' }}>
             <div style={{
               fontSize: '12px',
               letterSpacing: '3px',
@@ -210,95 +212,80 @@ export default function HomePage() {
             </div>
             <h2 style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: '52px',
+              fontSize: '48px',
               fontWeight: 600,
               marginBottom: '20px',
               color: 'white',
-              lineHeight: 1.2,
             }}>
               The Science of Perfect Sleep
             </h2>
             <p style={{
               fontSize: '18px',
+              maxWidth: '600px',
+              margin: '0 auto',
               opacity: 0.8,
-              lineHeight: 1.7,
+              lineHeight: 1.6,
               color: 'rgba(255, 255, 255, 0.85)',
             }}>
               Every Sluekie product is engineered using cutting-edge sleep research, premium materials, and innovative design.
             </p>
           </div>
 
-          {/* Feature Cards - Varied Heights */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: 'auto auto',
-            gap: '30px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '40px',
           }}>
             {[
-              { icon: '🧬', title: 'Thermoregulation', desc: 'Advanced fiber technology maintains optimal body temperature throughout all sleep cycles.', span: 'normal' },
-              { icon: '🌙', title: 'Pressure Relief', desc: 'Precisely engineered support systems distribute weight evenly, reducing pressure points.', span: 'tall' },
-              { icon: '💫', title: 'Sleep Quality', desc: 'Hypoallergenic materials and breathable weaves create the ideal sleep environment.', span: 'normal' },
-              { icon: '🌿', title: 'Organic Materials', desc: 'GOTS-certified organic cotton and sustainably sourced materials.', span: 'tall' },
-              { icon: '⚡', title: 'Recovery', desc: 'Specialized weaves enhance muscle recovery and cellular regeneration.', span: 'normal' },
-              { icon: '🎯', title: 'Personalized', desc: 'Adaptive materials respond to individual body types and sleep patterns.', span: 'normal' },
+              { icon: '🧬', title: 'Thermoregulation', desc: 'Advanced fiber technology maintains optimal body temperature throughout all sleep cycles.' },
+              { icon: '🌙', title: 'Pressure Relief', desc: 'Precisely engineered support systems distribute weight evenly, reducing pressure points.' },
+              { icon: '💫', title: 'Sleep Quality', desc: 'Hypoallergenic materials and breathable weaves create the ideal sleep environment.' },
+              { icon: '🌿', title: 'Organic Materials', desc: 'GOTS-certified organic cotton and sustainably sourced materials.' },
+              { icon: '⚡', title: 'Recovery', desc: 'Specialized weaves enhance muscle recovery and cellular regeneration.' },
+              { icon: '🎯', title: 'Personalized', desc: 'Adaptive materials respond to individual body types and sleep patterns.' },
             ].map((item, i) => (
-              <div
-                key={i}
-                className={`scale-in stagger-${(i % 6) + 1}`}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderRadius: '24px',
-                  padding: item.span === 'tall' ? '50px 35px' : '40px 30px',
-                  textAlign: 'center',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  gridRow: item.span === 'tall' ? 'span 2' : 'span 1',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
+              <div key={i} className="fade-in" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '24px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                transition: 'all 0.4s ease',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-12px)';
+                e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
                 <div style={{
-                  width: item.span === 'tall' ? '110px' : '90px',
-                  height: item.span === 'tall' ? '110px' : '90px',
+                  width: '90px',
+                  height: '90px',
                   margin: '0 auto 25px',
                   background: 'linear-gradient(135deg, #CBDAD5, #D4CFE7)',
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: item.span === 'tall' ? '48px' : '36px',
-                  transition: 'transform 0.3s ease',
-                }}
-                className="gentle-float">
+                  fontSize: '36px',
+                }}>
                   {item.icon}
                 </div>
                 <h3 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: item.span === 'tall' ? '28px' : '24px',
+                  fontSize: '24px',
                   color: '#1E2D4D',
                   marginBottom: '16px',
                   fontWeight: 600,
                 }}>
                   {item.title}
                 </h3>
-                <p style={{
-                  color: '#4A4A4A',
-                  lineHeight: 1.7,
-                  fontSize: item.span === 'tall' ? '16px' : '15px',
-                }}>
+                <p style={{ color: '#4A4A4A', lineHeight: 1.6, fontSize: '15px' }}>
                   {item.desc}
                 </p>
               </div>
@@ -436,158 +423,114 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* CTA Section - Asymmetric Split Layout */}
+      {/* CTA Section */}
       <section style={{
         padding: '100px 0',
         position: 'relative',
         zIndex: 2,
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', width: '100%' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '3fr 2fr',
-            gap: '80px',
-            alignItems: 'center',
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', textAlign: 'center', width: '100%' }}>
+          <h2 className="fade-in" style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: '56px',
+            fontWeight: 600,
+            marginBottom: '25px',
+            background: 'linear-gradient(135deg, white 0%, #CBDAD5 50%, #D4CFE7 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
           }}>
-            {/* Left Side - Content */}
-            <div className="slide-in-left">
-              <h2 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: '64px',
+            Begin Your Sleep Journey
+          </h2>
+          <p className="fade-in" style={{
+            fontSize: '20px',
+            maxWidth: '600px',
+            margin: '0 auto 50px',
+            opacity: 0.9,
+            lineHeight: 1.6,
+            color: 'rgba(255, 255, 255, 0.85)',
+          }}>
+            Transform your nights. Elevate your days. Experience the luxury of perfect sleep.
+          </p>
+
+          <div className="fade-in" style={{
+            display: 'flex',
+            gap: '25px',
+            justifyContent: 'center',
+            marginBottom: '60px',
+            flexWrap: 'wrap',
+          }}>
+            <Link
+              to="/products"
+              style={{
+                padding: '20px 40px',
+                fontSize: '16px',
+                borderRadius: '50px',
                 fontWeight: 600,
-                marginBottom: '30px',
-                background: 'linear-gradient(135deg, white 0%, #CBDAD5 50%, #D4CFE7 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                lineHeight: 1.1,
-              }}>
-                Begin Your Sleep Journey
-              </h2>
-              <p style={{
-                fontSize: '22px',
-                marginBottom: '40px',
-                opacity: 0.9,
-                lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.85)',
-                maxWidth: '550px',
-              }}>
-                Transform your nights. Elevate your days. Experience the luxury of perfect sleep with our scientifically-crafted collection.
-              </p>
+                background: 'linear-gradient(135deg, #CBDAD5 0%, #D4CFE7 100%)',
+                color: '#1E2D4D',
+                boxShadow: '0 12px 30px rgba(203, 218, 213, 0.3)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                textDecoration: 'none',
+                transition: 'all 0.4s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(203, 218, 213, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 12px 30px rgba(203, 218, 213, 0.3)';
+              }}
+            >
+              Discover Your Collection 🌙
+            </Link>
+          </div>
 
-              <Link
-                to="/products"
-                style={{
-                  padding: '22px 48px',
-                  fontSize: '17px',
-                  borderRadius: '50px',
-                  fontWeight: 600,
-                  background: 'linear-gradient(135deg, #CBDAD5 0%, #D4CFE7 100%)',
-                  color: '#1E2D4D',
-                  boxShadow: '0 12px 30px rgba(203, 218, 213, 0.3)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  textDecoration: 'none',
-                  transition: 'all 0.4s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = '0 16px 40px rgba(203, 218, 213, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(203, 218, 213, 0.3)';
-                }}
-              >
-                Discover Your Collection
-                <span style={{ fontSize: '20px' }}>→</span>
-              </Link>
-            </div>
-
-            {/* Right Side - Trust Badges in Card */}
-            <div className="slide-in-right" style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '32px',
-              padding: '50px 40px',
-            }}>
-              <h3 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: '28px',
-                fontWeight: 600,
-                marginBottom: '35px',
-                color: '#CBDAD5',
-                textAlign: 'center',
-              }}>
-                The Sluekie Promise
-              </h3>
-
-              <div style={{
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '60px',
+            flexWrap: 'wrap',
+          }}>
+            {[
+              { icon: '🛡️', text: '30-Night Sleep Trial', sub: 'Risk-free experience' },
+              { icon: '🚀', text: 'Complimentary Delivery', sub: 'White-glove service' },
+              { icon: '💎', text: 'Lifetime Quality Promise', sub: 'Exceptional standards' },
+            ].map((item, i) => (
+              <div key={i} className="fade-in" style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '28px',
+                alignItems: 'center',
+                gap: '15px',
               }}>
-                {[
-                  { icon: '🛡️', text: '30-Night Sleep Trial', sub: 'Risk-free experience guarantee' },
-                  { icon: '🚀', text: 'Complimentary Delivery', sub: 'White-glove service included' },
-                  { icon: '💎', text: 'Lifetime Quality Promise', sub: 'Exceptional standards always' },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className={`fade-in stagger-${i + 1}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '20px',
-                      padding: '20px',
-                      background: 'rgba(255, 255, 255, 0.05)',
-                      borderRadius: '20px',
-                      transition: 'all 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                      e.currentTarget.style.transform = 'translateX(8px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                      e.currentTarget.style.transform = 'translateX(0)';
-                    }}
-                  >
-                    <div style={{
-                      width: '70px',
-                      height: '70px',
-                      background: 'linear-gradient(135deg, #CBDAD5 0%, #D4CFE7 100%)',
-                      borderRadius: '20px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '32px',
-                      flexShrink: 0,
-                    }}>
-                      {item.icon}
-                    </div>
-                    <div>
-                      <div style={{
-                        fontWeight: 600,
-                        fontSize: '17px',
-                        color: 'rgba(255, 255, 255, 0.95)',
-                        marginBottom: '6px',
-                      }}>
-                        {item.text}
-                      </div>
-                      <div style={{
-                        fontSize: '14px',
-                        color: 'rgba(255, 255, 255, 0.7)',
-                      }}>
-                        {item.sub}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(15px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '28px',
+                }}>
+                  {item.icon}
+                </div>
+                <div style={{ fontWeight: 500, fontSize: '15px', color: 'rgba(255, 255, 255, 0.9)' }}>
+                  {item.text}
+                </div>
+                <div style={{ fontSize: '12px', opacity: 0.7, color: 'rgba(255, 255, 255, 0.7)' }}>
+                  {item.sub}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
