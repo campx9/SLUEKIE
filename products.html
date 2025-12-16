@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Shop Luxury Bedding Collection | Sluekie">
     <meta name="twitter:description" content="Browse Sluekie's luxury bedding collection. Premium organic cotton sheets, memory foam pillows, duvets & sleep accessories.">
-    <meta name="twitter:image" content="https://sluekie.com/images/brand/logo.png">
+    <meta property="twitter:image" content="https://sluekie.com/images/brand/logo.png">
     <meta name="twitter:site" content="@sluekie">
 
     <!-- Favicon -->
@@ -81,401 +81,463 @@
     <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Lifestyle Hero Banner -->
-    <section class="lifestyle-hero">
-        <div class="lifestyle-hero-image">
-            <img src="images/hero/hero-bedroom.webp" alt="Luxury Bedding Lifestyle" onerror="this.src='images/products/bedding-set-1.jpg'">
-            <div class="lifestyle-hero-overlay"></div>
+    <!-- Dynamic Sky Background -->
+    <div class="sky-container" id="skyContainer">
+        <div class="celestial-body sun" id="sun"></div>
+        <div class="celestial-body moon" id="moon"></div>
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
         </div>
-        <div class="lifestyle-hero-content">
-            <div class="container">
-                <h1 class="lifestyle-hero-title">Luxury Sleep Collection</h1>
-                <p class="lifestyle-hero-subtitle">Discover premium bedding crafted for the perfect night's sleep</p>
-                <div class="breadcrumb">
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <section class="shop-hero-parallax">
+        <div class="parallax-bg" data-speed="0.5">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&auto=format&fit=crop"
+                 alt="Luxury Bedroom"
+                 onerror="this.style.display='none'">
+        </div>
+        <div class="shop-hero-content">
+            <div class="container-luxury">
+                <div class="breadcrumb-luxury fade-in">
                     <a href="index.html">Home</a>
                     <span>/</span>
                     <span>Shop</span>
                 </div>
+                <h1 class="shop-hero-title slide-up">Discover Your Perfect Sleep</h1>
+                <p class="shop-hero-subtitle slide-up">Curated collection of premium bedding crafted for transformative rest</p>
+
+                <!-- Animated Stats -->
+                <div class="hero-stats slide-up">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50000">0</span>+
+                        <span class="stat-label">Happy Sleepers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98">0</span>%
+                        <span class="stat-label">Satisfaction Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="30">0</span>
+                        <span class="stat-label">Night Trial</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Banner -->
-    <section class="trust-banner">
-        <div class="container">
-            <div class="trust-items">
-                <div class="trust-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/>
-                    </svg>
-                    <span>Free Shipping Over $99</span>
+    <!-- Floating Trust Bar -->
+    <div class="floating-trust-bar">
+        <div class="container-luxury">
+            <div class="trust-items-modern">
+                <div class="trust-modern-item">
+                    <div class="trust-icon-wrapper">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <span>30-Night Trial</span>
                 </div>
-                <div class="trust-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    </svg>
-                    <span>30-Night Risk-Free Trial</span>
+                <div class="trust-modern-item">
+                    <div class="trust-icon-wrapper">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/>
+                        </svg>
+                    </div>
+                    <span>Free Shipping $99+</span>
                 </div>
-                <div class="trust-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/>
-                    </svg>
+                <div class="trust-modern-item">
+                    <div class="trust-icon-wrapper">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/>
+                        </svg>
+                    </div>
                     <span>Lifetime Warranty</span>
                 </div>
-                <div class="trust-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    <span>OEKO-TEX Certified</span>
+                <div class="trust-modern-item">
+                    <div class="trust-icon-wrapper">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                    </div>
+                    <span>GOTS Certified</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter & Sort Section -->
+    <section class="filter-section">
+        <div class="container-luxury">
+            <div class="filter-container">
+                <!-- Category Filters -->
+                <div class="filter-group fade-in">
+                    <h3 class="filter-title">Shop By Category</h3>
+                    <div class="category-pills">
+                        <button class="category-pill active" data-category="all">All Products</button>
+                        <button class="category-pill" data-category="sheets">Sheets</button>
+                        <button class="category-pill" data-category="pillows">Pillows</button>
+                        <button class="category-pill" data-category="duvets">Duvets</button>
+                        <button class="category-pill" data-category="accessories">Accessories</button>
+                    </div>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="sort-group fade-in">
+                    <select class="sort-select" id="sortProducts">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Collection -->
-    <section class="featured-collection">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Featured Collection</span>
-                <h2 class="section-title">Winter Serenity Collection</h2>
-                <p class="section-subtitle">Experience the ultimate comfort with our new winter collection featuring temperature-regulating fabrics and cloud-like softness</p>
-            </div>
-            <div class="featured-grid">
-                <div class="featured-card featured-large">
-                    <div class="featured-image">
-                        <img src="images/products/bedding-set-1.jpg" alt="Premium Bedding Set">
+    <!-- Products Grid with Advanced Animations -->
+    <section class="products-showcase">
+        <div class="container-luxury">
+            <div class="products-grid-modern" id="productsGrid">
+                <!-- Product Card 1 -->
+                <div class="product-card-modern fade-up" data-category="sheets" data-price="249" style="--delay: 0.1s">
+                    <div class="product-image-wrapper">
+                        <div class="product-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-organic">GOTS</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&auto=format&fit=crop"
+                             alt="Organic Cotton Sheet Set"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(1)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
+                        </div>
                     </div>
-                    <div class="featured-info">
-                        <h3>Premium Bedding Sets</h3>
-                        <p>Complete your bedroom sanctuary</p>
-                        <a href="products.html?category=bedding" class="featured-link">Shop Bedding</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-image">
-                        <img src="images/products/pillow-1.jpg" alt="Luxury Pillows">
-                    </div>
-                    <div class="featured-info">
-                        <h3>Luxury Pillows</h3>
-                        <p>Ergonomic support for perfect sleep</p>
-                        <a href="products.html?category=pillows" class="featured-link">Shop Pillows</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-image">
-                        <img src="images/products/sheets-1.jpg" alt="Premium Sheets">
-                    </div>
-                    <div class="featured-info">
-                        <h3>Premium Sheets</h3>
-                        <p>Organic cotton luxury</p>
-                        <a href="products.html?category=sheets" class="featured-link">Shop Sheets</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shop Section -->
-    <section class="section shop-section">
-        <div class="container">
-            <div class="shop-layout">
-                <!-- Filters Sidebar -->
-                <aside class="shop-sidebar">
-                    <div class="filter-section">
-                        <h3>Categories</h3>
-                        <ul class="filter-list" id="categoryFilters">
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="all" checked>
-                                    <span>All Products</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Bedding Sets">
-                                    <span>Bedding Sets</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Pillows">
-                                    <span>Pillows</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Sheets">
-                                    <span>Sheets</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Duvets">
-                                    <span>Duvets</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Blankets">
-                                    <span>Blankets</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="Accessories">
-                                    <span>Accessories</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="filter-section">
-                        <h3>Price Range</h3>
-                        <div class="price-range">
-                            <input type="range" min="0" max="500" value="500" id="priceRange">
-                            <div class="price-labels">
-                                <span>$0</span>
-                                <span id="priceValue">$500</span>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Sheets</span>
+                        <h3 class="product-name-modern">Organic Cotton Sheet Set</h3>
+                        <p class="product-desc-short">Breathable GOTS-certified organic cotton in luxurious sateen weave</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(2,489 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$249</span>
+                                <span class="price-original">$299</span>
                             </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'sheet-1', name: 'Organic Cotton Sheet Set', price: 249, image: 'sheet-1.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <div class="filter-section">
-                        <h3>Features</h3>
-                        <ul class="filter-list">
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="organic">
-                                    <span>Organic</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="hypoallergenic">
-                                    <span>Hypoallergenic</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" value="cooling">
-                                    <span>Temperature Control</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-
-                <!-- Products Grid -->
-                <main class="shop-main">
-                    <div class="shop-header">
-                        <div class="results-count">
-                            Showing <span id="resultsCount">0</span> products
+                <!-- Product Card 2 -->
+                <div class="product-card-modern fade-up" data-category="pillows" data-price="129" style="--delay: 0.2s">
+                    <div class="product-image-wrapper">
+                        <div class="product-badges">
+                            <span class="badge-bestseller">Bestseller</span>
                         </div>
-                        <div class="sort-options">
-                            <label>Sort by:</label>
-                            <select id="sortSelect">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="name">Name: A-Z</option>
-                            </select>
+                        <img src="https://images.unsplash.com/photo-1574813695156-db3e8e8e70f4?w=600&auto=format&fit=crop"
+                             alt="Memory Foam Pillow"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(2)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
                         </div>
                     </div>
-
-                    <div class="product-grid" id="productsGrid">
-                        <!-- Products loaded via JavaScript -->
-                    </div>
-                </main>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Sluekie Section -->
-    <section class="why-choose-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Sluekie</h2>
-                <p class="section-subtitle">Our commitment to excellence in every thread</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Quality Materials</h3>
-                    <p>We source only the finest organic cotton, bamboo, and premium fabrics from certified sustainable suppliers worldwide</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3>Expert Craftsmanship</h3>
-                    <p>Every product is meticulously crafted by skilled artisans with over 30 years of combined textile expertise</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/>
-                            <circle cx="12" cy="12" r="10"/>
-                        </svg>
-                    </div>
-                    <h3>Sustainable Practices</h3>
-                    <p>Carbon-neutral shipping, zero-waste manufacturing, and OEKO-TEX certified production processes that protect our planet</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>Customer Satisfaction</h3>
-                    <p>Join 50,000+ happy sleepers with our 30-night risk-free trial, lifetime warranty, and dedicated 24/7 customer care</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-subtitle">Real experiences from our valued community</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <p class="testimonial-text">"The quality of Sluekie bedding is unmatched. After trying their organic cotton sheets, I can't imagine sleeping on anything else. The difference in my sleep quality has been remarkable."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SJ</div>
-                        <div class="author-info">
-                            <div class="author-name">Sarah Johnson</div>
-                            <div class="author-location">Seattle, WA</div>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Pillows</span>
+                        <h3 class="product-name-modern">Adaptive Memory Foam Pillow</h3>
+                        <p class="product-desc-short">Contouring support with cooling gel technology for perfect alignment</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(3,124 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$129</span>
+                            </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'pillow-1', name: 'Adaptive Memory Foam Pillow', price: 129, image: 'pillow-1.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
-                    <div class="verified-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                        Verified Purchase
-                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <p class="testimonial-text">"As someone who values sustainability, I appreciate Sluekie's commitment to ethical manufacturing. The pillows are incredibly supportive, and knowing they're eco-friendly makes them even better."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div class="author-info">
-                            <div class="author-name">Michael Chen</div>
-                            <div class="author-location">San Francisco, CA</div>
-                        </div>
-                    </div>
-                    <div class="verified-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                        Verified Purchase
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <p class="testimonial-text">"I've purchased from luxury bedding brands before, but Sluekie offers superior quality at a fair price. Their customer service went above and beyond when I had questions about sizing."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">EP</div>
-                        <div class="author-info">
-                            <div class="author-name">Emily Parker</div>
-                            <div class="author-location">Austin, TX</div>
-                        </div>
-                    </div>
-                    <div class="verified-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                        Verified Purchase
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Recently Viewed Section -->
-    <section class="recently-viewed-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Recently Viewed</h2>
-                <p class="section-subtitle">Continue exploring your selections</p>
+                <!-- Product Card 3 -->
+                <div class="product-card-modern fade-up" data-category="duvets" data-price="399" style="--delay: 0.3s">
+                    <div class="product-image-wrapper">
+                        <div class="product-badges">
+                            <span class="badge-premium">Premium</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=600&auto=format&fit=crop"
+                             alt="Luxury Down Duvet"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(3)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Duvets</span>
+                        <h3 class="product-name-modern">Luxury Down Duvet</h3>
+                        <p class="product-desc-short">European white goose down with 700+ fill power for cloud-like comfort</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(1,876 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$399</span>
+                                <span class="price-original">$499</span>
+                            </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'duvet-1', name: 'Luxury Down Duvet', price: 399, image: 'duvet-1.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card-modern fade-up" data-category="accessories" data-price="89" style="--delay: 0.4s">
+                    <div class="product-image-wrapper">
+                        <div class="product-badges">
+                            <span class="badge-eco">Eco-Friendly</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&auto=format&fit=crop"
+                             alt="Silk Sleep Mask"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(4)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Accessories</span>
+                        <h3 class="product-name-modern">Premium Silk Sleep Mask</h3>
+                        <p class="product-desc-short">100% mulberry silk for gentle, restorative beauty sleep</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(892 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$89</span>
+                            </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'mask-1', name: 'Premium Silk Sleep Mask', price: 89, image: 'mask-1.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card-modern fade-up" data-category="sheets" data-price="179" style="--delay: 0.5s">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&auto=format&fit=crop"
+                             alt="Linen Sheet Set"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(5)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Sheets</span>
+                        <h3 class="product-name-modern">French Linen Sheet Set</h3>
+                        <p class="product-desc-short">Stone-washed Belgian flax for effortlessly luxurious texture</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(1,543 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$179</span>
+                            </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'linen-1', name: 'French Linen Sheet Set', price: 179, image: 'linen-1.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card-modern fade-up" data-category="pillows" data-price="149" style="--delay: 0.6s">
+                    <div class="product-image-wrapper">
+                        <div class="product-badges">
+                            <span class="badge-new">New</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1601460716093-a63a1c04eb6a?w=600&auto=format&fit=crop"
+                             alt="Down Alternative Pillow"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openProductModal(6)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info-modern">
+                        <span class="product-category-tag">Pillows</span>
+                        <h3 class="product-name-modern">Down Alternative Pillow</h3>
+                        <p class="product-desc-short">Hypoallergenic fill with plush hotel-quality comfort</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">(2,231 reviews)</span>
+                        </div>
+                        <div class="product-price-row">
+                            <div class="price-group">
+                                <span class="price-current">$149</span>
+                                <span class="price-original">$179</span>
+                            </div>
+                            <button class="add-cart-modern" onclick="Sluekie.Cart.addItem({id: 'pillow-2', name: 'Down Alternative Pillow', price: 149, image: 'pillow-2.jpg'})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="recently-viewed-grid" id="recentlyViewedGrid">
-                <div class="empty-state">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
+
+            <!-- Load More Button -->
+            <div class="load-more-section fade-in">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <span>Load More Products</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
                     </svg>
-                    <p>Your recently viewed items will appear here</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Shop With Us Section -->
+    <section class="why-shop-section">
+        <div class="container-luxury">
+            <div class="section-header-center fade-in">
+                <h2 class="section-title-alt">Why Shop With Sluekie</h2>
+                <p class="section-subtitle-alt">Experience the difference of truly premium bedding</p>
+            </div>
+
+            <div class="why-shop-grid">
+                <div class="why-card fade-up" style="--delay: 0.1s">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                    </div>
+                    <h3>Premium Materials</h3>
+                    <p>Every product crafted with GOTS-certified organic cotton and sustainable materials</p>
                 </div>
+
+                <div class="why-card fade-up" style="--delay: 0.2s">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <h3>Science-Backed Design</h3>
+                    <p>Engineered using cutting-edge sleep research for optimal rest and recovery</p>
+                </div>
+
+                <div class="why-card fade-up" style="--delay: 0.3s">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Risk-Free Trial</h3>
+                    <p>30 nights to fall in love with your purchase or get a full refund, no questions asked</p>
+                </div>
+
+                <div class="why-card fade-up" style="--delay: 0.4s">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Lifetime Warranty</h3>
+                    <p>We stand behind every product for years to come with comprehensive coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta-section">
+        <div class="container-luxury">
+            <div class="newsletter-content-modern fade-in">
+                <div class="newsletter-text">
+                    <h2>Get 15% Off Your First Order</h2>
+                    <p>Join our community for exclusive offers, sleep tips, and early access to new collections</p>
+                </div>
+                <form class="newsletter-form-modern" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        Subscribe
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -488,1152 +550,806 @@
     <script src="js/app.js"></script>
     <script src="js/components.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const productsGrid = document.getElementById('productsGrid');
-            const resultsCount = document.getElementById('resultsCount');
-            const categoryFilters = document.getElementById('categoryFilters');
-            const priceRange = document.getElementById('priceRange');
-            const priceValue = document.getElementById('priceValue');
-            const sortSelect = document.getElementById('sortSelect');
-
-            let allProducts = [];
-            let filteredProducts = [];
-
-            // Initialize products
-            if (window.Sluekie?.Products) {
-                allProducts = window.Sluekie.Products.getAll();
-                filteredProducts = [...allProducts];
-                renderProducts();
-            }
-
-            // Check URL for category filter
-            const urlParams = new URLSearchParams(window.location.search);
-            const categoryParam = urlParams.get('category');
-            if (categoryParam) {
-                const checkbox = categoryFilters.querySelector(`input[value="${categoryParam}"]`);
-                if (checkbox) {
-                    checkbox.checked = true;
-                    categoryFilters.querySelector('input[value="all"]').checked = false;
-                    filterProducts();
-                }
-            }
-
-            function renderProducts() {
-                resultsCount.textContent = filteredProducts.length;
-
-                if (filteredProducts.length === 0) {
-                    productsGrid.innerHTML = `
-                        <div class="no-products">
-                            <h3>No products found</h3>
-                            <p>Try adjusting your filters</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                productsGrid.innerHTML = filteredProducts.map(product => `
-                    <div class="product-card fade-in visible">
-                        <a href="product.html?id=${product.id}" class="product-link">
-                            <div class="product-image">
-                                <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.style.display='none'">
-                                <span class="product-badge">${product.badge}</span>
-                                <div class="product-actions">
-                                    <button class="product-action-btn" onclick="event.preventDefault(); event.stopPropagation(); Sluekie.Wishlist.toggle({id: '${product.id}', name: '${product.name}', price: ${product.price}})">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-category">${product.category}</div>
-                                <h3 class="product-name">${product.name}</h3>
-                                <p class="product-desc">${product.description}</p>
-                                <div class="product-pricing">
-                                    <div>
-                                        <span class="price">$${product.price}</span>
-                                        <span class="original-price">$${product.originalPrice}</span>
-                                    </div>
-                                    <button class="add-to-cart-btn" onclick="event.preventDefault(); event.stopPropagation(); Sluekie.Cart.addItem({id: '${product.id}', name: '${product.name}', price: ${product.price}, image: '${product.image}'})">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                `).join('');
-            }
-
-            function filterProducts() {
-                const selectedCategories = Array.from(categoryFilters.querySelectorAll('input:checked'))
-                    .map(cb => cb.value)
-                    .filter(v => v !== 'all');
-
-                const maxPrice = parseInt(priceRange.value);
-
-                filteredProducts = allProducts.filter(product => {
-                    const categoryMatch = selectedCategories.length === 0 ||
-                        selectedCategories.includes(product.category) ||
-                        categoryFilters.querySelector('input[value="all"]').checked;
-                    const priceMatch = product.price <= maxPrice;
-                    return categoryMatch && priceMatch;
-                });
-
-                sortProducts();
-                renderProducts();
-            }
-
-            function sortProducts() {
-                const sortBy = sortSelect.value;
-                switch (sortBy) {
-                    case 'price-low':
-                        filteredProducts.sort((a, b) => a.price - b.price);
-                        break;
-                    case 'price-high':
-                        filteredProducts.sort((a, b) => b.price - a.price);
-                        break;
-                    case 'name':
-                        filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-                        break;
-                    default:
-                        // Featured - keep original order
-                        break;
-                }
-            }
-
-            // Event listeners
-            categoryFilters.addEventListener('change', function(e) {
-                if (e.target.value === 'all' && e.target.checked) {
-                    categoryFilters.querySelectorAll('input:not([value="all"])').forEach(cb => cb.checked = false);
-                } else if (e.target.value !== 'all') {
-                    categoryFilters.querySelector('input[value="all"]').checked = false;
-                }
-                filterProducts();
-            });
-
-            priceRange.addEventListener('input', function() {
-                priceValue.textContent = '$' + this.value;
-                filterProducts();
-            });
-
-            sortSelect.addEventListener('change', function() {
-                sortProducts();
-                renderProducts();
-            });
-        });
-    </script>
-
     <style>
-        /* White Background Override */
-        body {
-            background: #FFFFFF !important;
-        }
+        /* ============================================ */
+        /* SHOP PAGE - MODERN REDESIGN */
+        /* ============================================ */
 
-        /* Lifestyle Hero Banner */
-        .lifestyle-hero {
+        /* Hero Section with Parallax */
+        .shop-hero-parallax {
             position: relative;
-            height: 500px;
-            margin-bottom: 60px;
+            height: 70vh;
+            min-height: 600px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .lifestyle-hero-image {
+        .parallax-bg {
             position: absolute;
-            top: 0;
+            top: -10%;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 120%;
+            z-index: -1;
         }
 
-        .lifestyle-hero-image img {
+        .parallax-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: brightness(0.7);
         }
 
-        .lifestyle-hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
-        }
-
-        .lifestyle-hero-content {
+        .shop-hero-content {
             position: relative;
-            height: 100%;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .breadcrumb-luxury {
             display: flex;
             align-items: center;
-            z-index: 2;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        .lifestyle-hero-title {
+        .breadcrumb-luxury a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb-luxury a:hover {
+            color: white;
+        }
+
+        .shop-hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 16px;
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            margin-bottom: 20px;
             line-height: 1.1;
         }
 
-        .lifestyle-hero-subtitle {
-            font-size: 20px;
-            color: #FFFFFF;
-            margin-bottom: 24px;
-            opacity: 0.95;
+        .shop-hero-subtitle {
+            font-size: clamp(18px, 2vw, 22px);
             max-width: 600px;
+            margin: 0 auto 50px;
+            opacity: 0.95;
         }
 
-        .lifestyle-hero .breadcrumb {
+        .hero-stats {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
-        }
-
-        .lifestyle-hero .breadcrumb a {
-            color: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s ease;
-        }
-
-        .lifestyle-hero .breadcrumb a:hover {
-            color: #FFFFFF;
-        }
-
-        /* Trust Banner */
-        .trust-banner {
-            background: #FFFFFF;
-            border-top: 1px solid #F0F0F0;
-            border-bottom: 1px solid #F0F0F0;
-            padding: 24px 0;
-            margin-bottom: 60px;
-        }
-
-        .trust-items {
-            display: flex;
-            justify-content: center;
             gap: 60px;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--deep-sleep);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .trust-item svg {
-            color: var(--deep-sleep);
-            opacity: 0.7;
-        }
-
-        /* Featured Collection */
-        .featured-collection {
-            padding: 80px 0;
-            background: #FAFAFA;
-        }
-
-        .section-header {
+        .stat-item {
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .section-tag {
-            display: inline-block;
-            background: var(--deep-sleep);
-            color: #FFFFFF;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-        }
-
-        .section-title {
+        .stat-number {
+            display: block;
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            font-weight: 600;
-            color: var(--deep-sleep);
-            margin-bottom: 16px;
-            line-height: 1.2;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--sage-calm);
         }
 
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--deep-charcoal);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
+        .stat-label {
+            display: block;
+            font-size: 14px;
+            margin-top: 8px;
+            opacity: 0.9;
         }
 
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+        /* Floating Trust Bar */
+        .floating-trust-bar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .trust-items-modern {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 30px;
         }
 
-        .featured-card {
-            position: relative;
-            background: #FFFFFF;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .featured-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .featured-large {
-            grid-row: span 2;
-        }
-
-        .featured-image {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            background: #F5F5F5;
-        }
-
-        .featured-large .featured-image {
-            height: 100%;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .featured-card:hover .featured-image img {
-            transform: scale(1.08);
-        }
-
-        .featured-info {
-            padding: 30px;
-        }
-
-        .featured-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--deep-sleep);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .featured-info p {
-            font-size: 15px;
-            color: var(--deep-charcoal);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .featured-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--deep-sleep);
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .featured-link::after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-
-        .featured-link:hover {
-            gap: 12px;
-        }
-
-        .featured-link:hover::after {
-            transform: translateX(4px);
-        }
-
-        /* Shop Page Styles */
-        .shop-section {
-            padding: 80px 0;
-            background: #FFFFFF;
-        }
-
-        .shop-layout {
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 60px;
-        }
-
-        /* Sidebar Filters */
-        .shop-sidebar {
-            background: #FFFFFF;
-            border: 1px solid #E8E8E8;
-            border-radius: 12px;
-            padding: 32px;
-            height: fit-content;
-            position: sticky;
-            top: 120px;
-        }
-
-        .filter-section {
-            margin-bottom: 35px;
-        }
-
-        .filter-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .filter-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 16px;
-            color: var(--deep-sleep);
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #E8E8E8;
-            font-weight: 600;
-        }
-
-        .filter-list {
-            list-style: none;
-        }
-
-        .filter-list li {
-            margin-bottom: 12px;
-        }
-
-        .filter-checkbox {
+        .trust-modern-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            font-size: 15px;
-            color: var(--deep-charcoal);
-            transition: color 0.3s ease;
-        }
-
-        .filter-checkbox:hover {
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
             color: var(--deep-sleep);
         }
 
-        .filter-checkbox input {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--sage-calm);
-        }
-
-        .price-range {
-            padding: 10px 0;
-        }
-
-        .price-range input[type="range"] {
-            width: 100%;
-            height: 6px;
-            -webkit-appearance: none;
-            background: var(--soft-mist);
-            border-radius: 3px;
-            outline: none;
-        }
-
-        .price-range input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: var(--sage-calm);
+        .trust-icon-wrapper {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
             border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .price-range input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-        }
-
-        .price-labels {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 14px;
-            color: var(--deep-charcoal);
-        }
-
-        /* Shop Main */
-        .shop-header {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
-            padding: 0;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 60px 0 40px;
             background: transparent;
         }
 
-        .results-count {
-            color: var(--deep-charcoal);
-            font-size: 15px;
-        }
-
-        .results-count span {
-            font-weight: 600;
-            color: var(--deep-sleep);
-        }
-
-        .sort-options {
+        .filter-container {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        .sort-options label {
-            font-size: 14px;
-            color: var(--deep-charcoal);
+        .filter-group {
+            flex: 1;
         }
 
-        .sort-options select {
-            padding: 10px 15px;
-            border: 2px solid var(--soft-mist);
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Lato', sans-serif;
-            background: white;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-
-        .sort-options select:focus {
-            outline: none;
-            border-color: var(--sage-calm);
-        }
-
-        /* Product Grid - 4 Column Layout */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        /* Luxury Product Cards */
-        .product-card {
-            background: #FFFFFF;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-            border-color: #F0F0F0;
-        }
-
-        .product-image {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            background: #FAFAFA;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: #FFFFFF;
-            color: var(--deep-sleep);
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 11px;
+        .filter-title {
+            font-size: 16px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            color: white;
         }
 
-        .product-actions {
-            position: absolute;
-            top: 16px;
-            right: 16px;
+        .category-pills {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            opacity: 0;
-            transform: translateY(-10px);
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .category-pill {
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .product-card:hover .product-actions {
+        .category-pill:hover {
+            border-color: var(--sage-calm);
+            background: rgba(203, 218, 213, 0.1);
+            color: white;
+        }
+
+        .category-pill.active {
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+            color: var(--deep-sleep);
+            border-color: transparent;
+        }
+
+        .sort-select {
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 200px;
+        }
+
+        .sort-select option {
+            background: var(--deep-sleep);
+            color: white;
+        }
+
+        /* Products Grid */
+        .products-showcase {
+            padding: 40px 0 100px;
+            background: transparent;
+        }
+
+        .products-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card-modern {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .product-card-modern.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .product-action-btn {
-            width: 44px;
-            height: 44px;
-            background: #FFFFFF;
-            border: none;
-            border-radius: 50%;
+        .product-card-modern:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #f8f9fa;
+        }
+
+        .product-img-main {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card-modern:hover .product-img-main {
+            transform: scale(1.08);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .product-badges span {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge-new { background: rgba(212, 207, 231, 0.95); color: var(--deep-sleep); }
+        .badge-bestseller { background: rgba(212, 168, 116, 0.95); color: white; }
+        .badge-organic { background: rgba(144, 187, 142, 0.95); color: white; }
+        .badge-premium { background: rgba(30, 45, 77, 0.95); color: white; }
+        .badge-eco { background: rgba(203, 218, 213, 0.95); color: var(--deep-sleep); }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30, 45, 77, 0.9);
+            backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card-modern:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-view-btn {
+            background: white;
+            color: var(--deep-sleep);
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
         }
 
-        .product-action-btn:hover {
-            background: var(--deep-sleep);
-            color: #FFFFFF;
-            transform: scale(1.1);
+        .quick-view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
 
-        .product-action-btn svg {
-            stroke: currentColor;
+        .product-info-modern {
+            padding: 28px;
         }
 
-        .product-info {
-            padding: 24px 20px;
-        }
-
-        .product-category {
+        .product-category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(203, 218, 213, 0.15);
+            color: var(--sage-calm);
+            border-radius: 12px;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--deep-charcoal);
-            opacity: 0.6;
-            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
 
-        .product-name {
+        .product-name-modern {
             font-family: 'Playfair Display', serif;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--deep-sleep);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.3;
         }
 
-        .product-desc {
+        .product-desc-short {
             font-size: 14px;
             color: var(--deep-charcoal);
-            line-height: 1.5;
-            margin-bottom: 16px;
             opacity: 0.8;
-        }
-
-        .product-pricing {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--deep-sleep);
-        }
-
-        .original-price {
-            font-size: 16px;
-            color: var(--deep-charcoal);
-            opacity: 0.5;
-            text-decoration: line-through;
-            margin-left: 8px;
-        }
-
-        .add-to-cart-btn {
-            background: var(--deep-sleep);
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .add-to-cart-btn:hover {
-            background: var(--midnight-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .product-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .no-products {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 80px 40px;
-            background: #FAFAFA;
-            border-radius: 12px;
-        }
-
-        .no-products h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--deep-sleep);
-            margin-bottom: 10px;
-        }
-
-        .no-products p {
-            color: var(--deep-charcoal);
-        }
-
-        /* Responsive */
-        @media (max-width: 1400px) {
-            .product-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .lifestyle-hero {
-                height: 400px;
-            }
-
-            .lifestyle-hero-title {
-                font-size: 48px;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .featured-large {
-                grid-row: span 1;
-            }
-
-            .shop-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .shop-sidebar {
-                position: static;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .filter-section {
-                margin-bottom: 0;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .lifestyle-hero {
-                height: 350px;
-            }
-
-            .lifestyle-hero-title {
-                font-size: 36px;
-            }
-
-            .lifestyle-hero-subtitle {
-                font-size: 16px;
-            }
-
-            .trust-items {
-                gap: 30px;
-            }
-
-            .trust-item span {
-                font-size: 13px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .featured-collection {
-                padding: 60px 0;
-            }
-
-            .shop-section {
-                padding: 60px 0;
-            }
-
-            .shop-sidebar {
-                grid-template-columns: 1fr;
-            }
-
-            .shop-header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .lifestyle-hero {
-                height: 300px;
-            }
-
-            .lifestyle-hero-title {
-                font-size: 28px;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .product-image {
-                height: 280px;
-            }
-
-            .trust-items {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .shop-sidebar {
-                padding: 24px;
-            }
-        }
-
-
-        /* Why Choose Section */
-        .why-choose-section {
-            padding: 80px 0;
-            background: #FAFAFA;
-        }
-
-        .why-choose-section .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .why-choose-section .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 600;
-            color: var(--deep-sleep);
-            margin-bottom: 12px;
-        }
-
-        .why-choose-section .section-subtitle {
-            font-size: 16px;
-            color: var(--deep-charcoal);
-            opacity: 0.8;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: #FFFFFF;
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-            border-color: #E8E8E8;
-        }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 24px;
-            background: #FAFAFA;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--deep-sleep);
-        }
-
-        .benefit-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--deep-sleep);
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .benefit-card p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--deep-charcoal);
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 80px 0;
-            background: #FFFFFF;
-        }
-
-        .testimonials-section .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .testimonials-section .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 600;
-            color: var(--deep-sleep);
-            margin-bottom: 12px;
-        }
-
-        .testimonials-section .section-subtitle {
-            font-size: 16px;
-            color: var(--deep-charcoal);
-            opacity: 0.8;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: #FAFAFA;
-            border-radius: 12px;
-            padding: 35px;
-            position: relative;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-color: #E8E8E8;
-            background: #FFFFFF;
-        }
-
-        .stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 20px;
-            color: #F4C542;
-        }
-
-        .testimonial-text {
-            font-size: 15px;
-            line-height: 1.8;
-            color: var(--deep-sleep);
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            line-height: 1.6;
             margin-bottom: 15px;
         }
 
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--deep-sleep);
+        .product-rating {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #FFFFFF;
-            font-size: 16px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
-        .author-name {
-            font-weight: 600;
-            color: var(--deep-sleep);
-            font-size: 15px;
+        .stars {
+            color: #D4A574;
+            font-size: 14px;
+            letter-spacing: 2px;
         }
 
-        .author-location {
+        .review-count {
             font-size: 13px;
             color: var(--deep-charcoal);
             opacity: 0.7;
         }
 
-        .verified-badge {
+        .product-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .price-group {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .price-current {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--deep-sleep);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price-original {
+            font-size: 18px;
+            color: var(--deep-charcoal);
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+        .add-cart-modern {
+            background: linear-gradient(135deg, var(--deep-sleep), var(--twilight));
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .add-cart-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 45, 77, 0.3);
+        }
+
+        /* Load More */
+        .load-more-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: rgba(76, 175, 80, 0.1);
-            color: #4CAF50;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+            gap: 12px;
+            transition: all 0.3s ease;
         }
 
-        .verified-badge svg {
-            width: 14px;
-            height: 14px;
+        .load-more-btn:hover {
+            border-color: var(--sage-calm);
+            background: rgba(203, 218, 213, 0.1);
+            transform: translateY(-3px);
         }
 
-        /* Recently Viewed Section */
-        .recently-viewed-section {
-            padding: 80px 0 100px;
-            background: #FAFAFA;
+        /* Why Shop Section */
+        .why-shop-section {
+            padding: 100px 0;
+            background: transparent;
         }
 
-        .recently-viewed-section .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .recently-viewed-section .section-title {
+        .section-title-alt {
             font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 600;
-            color: var(--deep-sleep);
-            margin-bottom: 12px;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
         }
 
-        .recently-viewed-section .section-subtitle {
-            font-size: 16px;
-            color: var(--deep-charcoal);
-            opacity: 0.8;
+        .section-subtitle-alt {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 60px;
         }
 
-        .recently-viewed-grid {
+        .why-shop-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
         }
 
-        .empty-state {
-            grid-column: 1 / -1;
+        .why-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
             text-align: center;
-            padding: 80px 40px;
-            background: #FFFFFF;
-            border-radius: 12px;
-            border: 2px dashed #E8E8E8;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .empty-state svg {
-            color: var(--deep-charcoal);
-            opacity: 0.3;
-            margin-bottom: 20px;
+        .why-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .empty-state p {
-            color: var(--deep-charcoal);
-            opacity: 0.6;
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--sage-calm);
+            transform: translateY(-10px);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .why-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--sage-calm), var(--lavender-smoke));
+        }
+
+        .newsletter-content-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--deep-sleep);
+            margin-bottom: 10px;
+        }
+
+        .newsletter-text p {
             font-size: 16px;
+            color: var(--deep-charcoal);
+            opacity: 0.9;
         }
 
-        /* Additional Responsive Styles */
+        .newsletter-form-modern {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .newsletter-form-modern input {
+            flex: 1;
+            padding: 16px 24px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: white;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form-modern input:focus {
+            border-color: var(--deep-sleep);
+        }
+
+        .newsletter-form-modern button {
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: var(--deep-sleep);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-form-modern button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 45, 77, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: var(--delay, 0s);
+        }
+
+        .slide-up {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
+            .products-grid-modern {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 30px;
             }
 
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .recently-viewed-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .why-shop-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
             }
         }
 
         @media (max-width: 768px) {
-            .benefits-grid {
+            .shop-hero-title {
+                font-size: 42px;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .floating-trust-bar {
+                position: relative;
+                top: 0;
+            }
+
+            .trust-items-modern {
+                justify-content: center;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .category-pills {
+                justify-content: center;
+            }
+
+            .products-grid-modern {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
-            .benefit-card {
-                padding: 30px 25px;
+            .product-price-row {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .recently-viewed-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .add-cart-modern {
+                justify-content: center;
+                width: 100%;
             }
 
-            .why-choose-section,
-            .testimonials-section,
-            .recently-viewed-section {
-                padding: 60px 0;
+            .newsletter-content-modern {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .why-choose-section .section-title,
-            .testimonials-section .section-title,
-            .recently-viewed-section .section-title {
-                font-size: 30px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .recently-viewed-grid {
-                grid-template-columns: 1fr;
+            .newsletter-form-modern {
+                max-width: 100%;
             }
 
-            .testimonial-card {
-                padding: 25px;
-            }
-
-            .why-choose-section .section-title,
-            .testimonials-section .section-title,
-            .recently-viewed-section .section-title {
-                font-size: 26px;
+            .newsletter-form-modern button {
+                justify-content: center;
             }
         }
     </style>
+
+    <script>
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const parallaxBg = document.querySelector('.parallax-bg');
+            if (parallaxBg) {
+                const scrolled = window.pageYOffset;
+                parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Counter Animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = Math.floor(target).toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate counters when visible
+                    if (entry.target.classList.contains('stat-number')) {
+                        const target = parseInt(entry.target.dataset.target);
+                        animateCounter(entry.target, target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.fade-up, .product-card-modern, .why-card, .stat-number').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Category Filter
+            document.querySelectorAll('.category-pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.dataset.category;
+                    filterProducts(category);
+                });
+            });
+
+            // Newsletter Form
+            document.getElementById('newsletterForm')?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                if (window.Sluekie?.Newsletter) {
+                    window.Sluekie.Newsletter.subscribe(email);
+                }
+                e.target.reset();
+            });
+        });
+
+        // Filter Products
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card-modern');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                    setTimeout(() => product.classList.add('visible'), 10);
+                } else {
+                    product.classList.remove('visible');
+                    setTimeout(() => product.style.display = 'none', 300);
+                }
+            });
+        }
+
+        // Quick View Modal (placeholder)
+        function openProductModal(id) {
+            console.log('Opening product modal:', id);
+            // Implement modal functionality
+        }
+
+        // Load More
+        document.getElementById('loadMoreBtn')?.addEventListener('click', () => {
+            console.log('Loading more products...');
+            // Implement load more functionality
+        });
+    </script>
 </body>
 </html>
