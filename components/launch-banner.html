@@ -1,4 +1,4 @@
-<!-- SLUEKIE Coming Soon Launch Banner -->
+<!-- SLUEKIE Coming Soon Launch Banner - Sticky Bottom -->
 <div class="launch-banner" id="launchBanner">
     <div class="launch-banner-content">
         <div class="launch-icon">
@@ -18,29 +18,82 @@
     </div>
 </div>
 
+<!-- SLUEKIE Welcome Popup Modal -->
+<div class="launch-popup" id="launchPopup">
+    <div class="launch-popup-overlay" onclick="closeLaunchPopup()"></div>
+    <div class="launch-popup-content">
+        <button class="launch-popup-close" onclick="closeLaunchPopup()" aria-label="Close popup">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <div class="launch-popup-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+        </div>
+
+        <h2 class="launch-popup-title">Welcome to Sluekie</h2>
+        <p class="launch-popup-subtitle">Transform Your Sleep Experience</p>
+
+        <p class="launch-popup-text">
+            We're launching our luxury sleep collection in <strong>2025</strong>. Be among the first to experience premium bedding designed to transform your nights forever.
+        </p>
+
+        <div class="launch-popup-benefits">
+            <div class="popup-benefit">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Exclusive early access</span>
+            </div>
+            <div class="popup-benefit">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Special launch pricing</span>
+            </div>
+            <div class="popup-benefit">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>VIP product previews</span>
+            </div>
+        </div>
+
+        <div class="launch-popup-actions">
+            <a href="#newsletter" class="popup-cta-primary" onclick="closeLaunchPopup()">Join Waitlist</a>
+            <button class="popup-cta-secondary" onclick="closeLaunchPopup()">Continue Browsing</button>
+        </div>
+    </div>
+</div>
+
 <style>
+/* ============================================ */
+/* STICKY BOTTOM BANNER */
+/* ============================================ */
 .launch-banner {
     position: fixed;
-    top: 80px; /* Below the navbar */
+    bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999; /* Below navbar z-index of 1000 */
+    z-index: 999;
     background: linear-gradient(135deg, var(--deep-sleep) 0%, var(--twilight) 100%);
     padding: 12px 20px;
     transform: translateY(0);
-    transition: transform 0.3s ease, top 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .launch-banner.hidden {
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0;
     pointer-events: none;
-}
-
-/* When navbar is scrolled/compact */
-body.navbar-scrolled .launch-banner {
-    top: 70px;
 }
 
 .launch-banner-content {
@@ -112,19 +165,191 @@ body.navbar-scrolled .launch-banner {
     color: white;
 }
 
-/* Adjust content when banner is visible */
-body.banner-visible .hero {
-    padding-top: 160px;
+/* ============================================ */
+/* WELCOME POPUP MODAL */
+/* ============================================ */
+.launch-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-body.banner-visible .page-header {
-    padding-top: 200px;
+.launch-popup.visible {
+    opacity: 1;
+    pointer-events: all;
 }
 
+.launch-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.launch-popup-content {
+    position: relative;
+    background: white;
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 560px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.launch-popup.visible .launch-popup-content {
+    transform: scale(1);
+}
+
+.launch-popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--deep-charcoal);
+}
+
+.launch-popup-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+.launch-popup-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, var(--sage-calm) 0%, var(--lavender-smoke) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: popupPulse 2s ease-in-out infinite;
+}
+
+@keyframes popupPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(203, 218, 213, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(203, 218, 213, 0); }
+}
+
+.launch-popup-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--deep-sleep);
+    margin-bottom: 10px;
+}
+
+.launch-popup-subtitle {
+    font-size: 18px;
+    color: var(--sage-calm);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.launch-popup-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--deep-charcoal);
+    margin-bottom: 30px;
+}
+
+.launch-popup-text strong {
+    color: var(--deep-sleep);
+    font-weight: 600;
+}
+
+.launch-popup-benefits {
+    background: linear-gradient(135deg, rgba(203, 218, 213, 0.1) 0%, rgba(212, 207, 231, 0.1) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 35px;
+}
+
+.popup-benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--deep-sleep);
+    font-size: 15px;
+}
+
+.popup-benefit svg {
+    color: var(--sage-calm);
+    flex-shrink: 0;
+}
+
+.launch-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-cta-primary {
+    background: linear-gradient(135deg, var(--deep-sleep) 0%, var(--twilight) 100%);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(30, 45, 77, 0.3);
+}
+
+.popup-cta-secondary {
+    background: transparent;
+    color: var(--deep-charcoal);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-cta-secondary:hover {
+    border-color: var(--sage-calm);
+    color: var(--deep-sleep);
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
 @media (max-width: 768px) {
     .launch-banner {
         padding: 15px;
-        top: 75px;
     }
 
     .launch-banner-content {
@@ -139,31 +364,115 @@ body.banner-visible .page-header {
         font-size: 13px;
     }
 
-    body.banner-visible .hero {
-        padding-top: 180px;
+    .launch-popup-content {
+        padding: 40px 30px;
+        width: 95%;
     }
 
-    body.banner-visible .page-header {
-        padding-top: 220px;
+    .launch-popup-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 25px;
+    }
+
+    .launch-popup-icon svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .launch-popup-title {
+        font-size: 28px;
+    }
+
+    .launch-popup-subtitle {
+        font-size: 16px;
+    }
+
+    .launch-popup-text {
+        font-size: 15px;
+    }
+
+    .popup-benefit {
+        font-size: 14px;
     }
 }
 </style>
 
 <script>
+// ============================================
+// LAUNCH BANNER FUNCTIONS
+// ============================================
 function closeLaunchBanner() {
     const banner = document.getElementById('launchBanner');
     banner.classList.add('hidden');
-    document.body.classList.remove('banner-visible');
     sessionStorage.setItem('sluekie_banner_closed', 'true');
 }
 
-// Check if banner was closed this session
+// ============================================
+// LAUNCH POPUP FUNCTIONS
+// ============================================
+function closeLaunchPopup() {
+    const popup = document.getElementById('launchPopup');
+    popup.classList.remove('visible');
+
+    // Save the timestamp of when popup was last shown
+    localStorage.setItem('sluekie_popup_last_shown', Date.now().toString());
+}
+
+function shouldShowPopup() {
+    const lastShown = localStorage.getItem('sluekie_popup_last_shown');
+
+    // If never shown before, show it (first visit)
+    if (!lastShown) {
+        return true;
+    }
+
+    // Check if 3 days (259200000 ms) have passed since last shown
+    const threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
+    const timeSinceLastShown = Date.now() - parseInt(lastShown);
+
+    return timeSinceLastShown >= threeDaysInMs;
+}
+
+function showLaunchPopup() {
+    const popup = document.getElementById('launchPopup');
+    if (popup && shouldShowPopup()) {
+        // Delay popup by 2 seconds for better UX
+        setTimeout(() => {
+            popup.classList.add('visible');
+        }, 2000);
+    }
+}
+
+// ============================================
+// INITIALIZE ON PAGE LOAD
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle bottom banner
     const bannerClosed = sessionStorage.getItem('sluekie_banner_closed');
-    if (!bannerClosed) {
-        document.body.classList.add('banner-visible');
-    } else {
+    if (bannerClosed) {
         document.getElementById('launchBanner')?.classList.add('hidden');
+    }
+
+    // Handle popup modal
+    showLaunchPopup();
+});
+
+// Close popup when clicking outside
+document.addEventListener('click', function(e) {
+    const popup = document.getElementById('launchPopup');
+    if (e.target === popup) {
+        closeLaunchPopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const popup = document.getElementById('launchPopup');
+        if (popup && popup.classList.contains('visible')) {
+            closeLaunchPopup();
+        }
     }
 });
 </script>
